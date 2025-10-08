@@ -27,7 +27,7 @@ export default function About() {
               </p>
 
               <p>
-                I believe good design is equal parts empathy and structure — and I'm always looking to build things that are not only usable, but genuinely helpful.
+                I believe good design is equal parts empathy and structure — and I&apos;m always looking to build things that are not only usable, but genuinely helpful.
               </p>
             </div>
           </div>
