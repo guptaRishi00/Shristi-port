@@ -107,7 +107,7 @@ export default function DesignProcess() {
           {processSteps.map((step, index) => (
             <div
               key={index}
-              className="bg-transparent border border-white/20 rounded-2xl p-6 hover:border-white/40 transition-colors duration-300"
+              className="bg-transparent border border-black rounded-2xl p-6 hover:border-white/40 transition-colors duration-300"
             >
               {/* Icon and Title */}
               <div className="flex items-center gap-3 mb-4">
