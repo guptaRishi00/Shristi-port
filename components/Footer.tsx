@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 px-8 sm:px-12 lg:px-16">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-4 px-6 sm:px-12 lg:px-16 w-screen">
       <div className="max-w-7xl mx-auto">
         {/* Main Content */}
         <div className="text-center mb-12">

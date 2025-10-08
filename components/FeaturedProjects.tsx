@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import NewspaceProject from '@/app/Projects/Newspace/page';
+
 
 export default function FeaturedProjects() {
   const projects = [
@@ -25,7 +27,7 @@ export default function FeaturedProjects() {
       image: 'Frame4.png',
       title: 'Newspace Research & Technologies',
       description: 'Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.',
-      link: '#'
+      link: '/Projects/Newspace'
     }
   ];
 

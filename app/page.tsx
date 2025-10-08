@@ -12,16 +12,26 @@ export default function Home() {
     
       <main className="relative  bg-black justify-center items-center flex flex-col overflow-hidden mx-auto sm:px-10 px-5">
         <div className="max-w-7xl w-full">
-        <Navbar />
-        <Hero />
-        <About />
-        <WhatIDo />
-        <Education />
-        <Philosophy />
-        <DesignProcess />
-        <FeaturedProjects />
-        <Footer />
-        </div>
+    <Navbar />
+  </div>
+
+  
+  <div className="-mx-5 sm:-mx-10 ">
+  <Hero />
+</div>
+
+  <div className="max-w-7xl w-full">
+    <About />
+    <WhatIDo />
+    <Education />
+    <Philosophy />
+    <DesignProcess />
+    <FeaturedProjects />
+    
+  </div>
+   <div className="-mx-5 sm:-mx-10">
+  <Footer />
+</div>
         
       </main>
       

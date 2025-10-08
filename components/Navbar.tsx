@@ -1,33 +1,51 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm  z-50">
-      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
-        <div className="flex items-center justify-end h-16 sm:h-20">
-          {/* Navigation Links */}
-          <div className="flex items-center gap-8">
-            <a 
-              href="#about" 
-              className="text-white text-sm sm:text-base font-medium hover:text-gray-300 transition-colors"
-            >
-              About
-            </a>
-            <a 
-              href="#projects" 
-              className="text-white text-sm sm:text-base font-medium hover:text-gray-300 transition-colors"
-            >
-              Projects
-            </a>
-            <a 
-              href="#contact" 
-              className="px-6 py-2 bg-white text-black text-sm sm:text-base font-medium rounded-full hover:bg-gray-200 transition-colors"
-            >
-              Contact
-            </a>
-          </div>
+    <nav
+      className={`fixed top-0 left-0 w-screen z-50 transition-all duration-300 ${
+        scrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}
+    >
+      {/* Use px-8 instead of full padding to shift content a bit left */}
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 py-6 flex justify-between items-center w-full">
+        {/* Logo */}
+        <Link href="/" className="text-white font-bold text-xl">
+          
+        </Link>
+
+        {/* Menu */}
+        <div className="flex items-center space-x-6">
+          <Link href="#about" className="text-white hover:text-gray-300 transition">
+            About
+          </Link>
+          <Link href="#projects" className="text-white hover:text-gray-300 transition">
+            Projects
+          </Link>
+
+          {/* Contact as a button */}
+          <Link
+            href="#contact"
+            className="px-5 py-2 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition"
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;

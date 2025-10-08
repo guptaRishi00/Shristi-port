@@ -1,5 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -8,10 +9,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Image */}
           <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-            <img
+            <Image
               src="/ProfilePhoto.jpg"
               alt="Profile"
+              width={384}  // sm:w-80 = 320px, lg:w-96 = 384px
+              height={384}
               className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover"
+              priority
             />
           </div>
 

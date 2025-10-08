@@ -1,30 +1,35 @@
-import React from 'react';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
+
 export default function Hero() {
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden flex items-start">
+    <div className="relative min-h-[110vh] bg-black overflow-hidden flex items-start w-screen justify-center">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
+      <div
+        className="absolute inset-0 z-0 w-full h-full"
         style={{
-          backgroundImage: 'url(/Background.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundImage: "url(/Background.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       />
-      
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0" />
-      
+
       {/* Content */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-8 sm:px-12 lg:px-16 pt-32 sm:pt-40 lg:pt-48">
-        <div className="max-w-2xl">
-          {/* Main Heading */}
+        <div className="max-w-2xl text-left">
+          {/* Main Heading with Text Generate Effect */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            Hi,
-            <br />
-            I'm Shristi
+            <TextGenerateEffect
+              words={"\nHi, I'm Shristi"}
+              className="text-white"
+              filter={true}
+              duration={0.5}
+            />
           </h1>
 
           {/* Subtitle */}
@@ -34,7 +39,8 @@ export default function Hero() {
 
           {/* Description */}
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
-            I craft beautiful, user-centered digital experiences that solve real problems and delight users. Specializing in mobile apps, web platforms, and design systems.
+            I craft beautiful, user-centered digital experiences that solve real problems and delight users. 
+            Specializing in mobile apps, web platforms, and design systems.
           </p>
 
           {/* CTA Button */}
