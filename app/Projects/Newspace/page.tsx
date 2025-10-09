@@ -1,219 +1,255 @@
-'use client';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+"use client";
 
-const NewspaceProject: React.FC = () => {
+import React from "react";
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ArrowLeft, Shield, Globe, Zap, Users, ArrowRight, PenTool, Layout, Moon, Layers } from "lucide-react";
+
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  color: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, color }) => (
+  <div>
+    <div className={`w-8 h-8 ${color} mb-3`}>{icon}</div>
+    <h3 className="font-semibold mb-2">{title}</h3>
+    <p className="text-sm text-gray-400">{description}</p>
+  </div>
+);
+
+export default function NewspacePortfolio() {
+  const heroBackgroundImage: string = "/Project4.png"; 
+
   return (
-    <div className="min-h-screen w-full bg-black">
-      
-      {/*  Navbar Section  */}
-      <div className="w-full bg-black/90 backdrop-blur-sm sticky top-0 z-50 py-6 border-b border-neutral-800">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <Navbar />
-        </div>
-      </div>
+    <div className="bg-black text-white">
+      {/* Navbar */}
+      <Navbar />
 
-      {/*  Main Page Content*/}
-      <div className="max-w-[1000px] mx-auto px-5 py-10 md:px-8 md:py-16">
-        
-        {/* Header */}
-        <div className="mb-12 pb-8 border-b border-neutral-800">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white flex items-center gap-4">
-            <Link 
-              href="/" 
-              className="inline-block text-sm text-white px-4 py-2 border border-neutral-700 rounded hover:bg-neutral-900 hover:border-neutral-500 transition-all"
-            >
-              ←
-            </Link>
-            Newspace Research & Technologies
-          </h1>
-          <p className="text-base md:text-lg text-neutral-400 leading-relaxed">
-            Duo-To-Hexa Restrictions | Correct Point-Distorted Vision Of This Work; Here's An Overview Of My Role And Contributions!!!
-          </p>
-        </div>
+      {/* Main Content with top padding for fixed Navbar */}
+      <div className="pt-24">
+        {/* Hero Section */}
+        <section className="relative min-h-screen">
+          {/* Background Image */}
+          {heroBackgroundImage && (
+            <>
+              <Image
+                src={heroBackgroundImage}
+                alt="Hero background"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-black/50 z-10"></div>
+            </>
+          )}
 
-        {/* Hero Image */}
-        <div className="w-full h-[280px] md:h-[550px] bg-neutral-900 border border-neutral-800 mb-12 overflow-hidden flex items-center justify-center rounded-2xl">
-          <Image 
-            src="/Frame4.png" 
-            alt="Newspace Drone Project"
-            width={1000}
-            height={500}
-            className="w-full h-full object-cover"
-          />
-        </div>
+          {/* Hero Content */}
+          <div className="relative z-20 max-w-7xl mx-auto px-6 pt-8">
+            {/* Back to Projects Button */}
+            <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-12">
+              <ArrowLeft className="w-4 h-4" />
+              <span>Back To Projects</span>
+            </button>
 
-        {/* Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
-          <div className="p-5 border border-neutral-800 rounded">
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-2">Role</div>
-            <div className="text-base md:text-lg text-white font-medium">UI/UX Developer - Django Engineer</div>
+            {/* Hero Text */}
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              Newspace Research & Technologies
+            </h1>
+            <div className="flex items-center gap-2 mb-4">
+              <Shield className="w-5 h-5 text-yellow-500" />
+              <span className="text-yellow-500 font-medium">NDA Protected</span>
+            </div>
+            <p className="text-gray-400 text-lg max-w-2xl">
+              (Due to NDA restrictions, I cannot share detailed visuals of this work.<br />
+              Here&apos;s an overview of my role and contributions.)
+            </p>
           </div>
-          <div className="p-5 border border-neutral-800 rounded">
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-2">Duration</div>
-            <div className="text-base md:text-lg text-white font-medium">Long-term Project</div>
-          </div>
-          <div className="p-5 border border-neutral-800 rounded">
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-2">Industry</div>
-            <div className="text-base md:text-lg text-white font-medium">Aerospace & Defense</div>
-          </div>
-        </div>
+        </section>
 
         {/* Project Overview */}
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-white pb-4 border-b border-neutral-800">
-            Project Overview
-          </h2>
-          <div className="py-8">
-            <p className="mb-5 text-neutral-300">
-              At Newspace Research & Technologies, I designed Mission-Critical Interfaces for Aerospace and Defense Solutions. 
-              My role extended across multiple domains, encompassing UI/UX design, frontend and backend development, and 
-              mission-critical dashboard creation. I played an integral role in creating a user-centric interface that balanced 
-              aesthetic appeal with operational efficiency to support complex defense and aerospace workflows.
-            </p>
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <h2 className="text-4xl font-bold mb-12">Project Overview</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                At Newspace Research & Technologies, I designed mission-critical interfaces for aerospace and defence applications. In these high-stakes environments, design had to be more than aesthetic — it had to deliver clarity, speed, and reliability.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                My focus was on creating systems that empowered users to make confident decisions in complex operational contexts.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <FeatureCard
+                icon={<Globe className="w-8 h-8" />}
+                title="Global Impact"
+                description="Mission-Critical Systems Used Worldwide"
+                color="text-blue-400"
+              />
+              <FeatureCard
+                icon={<Shield className="w-8 h-8" />}
+                title="Security First"
+                description="Defense-Grade Security Standards"
+                color="text-green-400"
+              />
+              <FeatureCard
+                icon={<Zap className="w-8 h-8" />}
+                title="High Performance"
+                description="Real-Time Data Processing"
+                color="text-yellow-400"
+              />
+              <FeatureCard
+                icon={<Users className="w-8 h-8" />}
+                title="User-Centric"
+                description="Designed For Operators And Engineers"
+                color="text-purple-400"
+              />
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* My Contributions */}
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-white pb-4 border-b border-neutral-800">
-            My Contributions
-          </h2>
-          <div className="py-8">
-            <ul className="list-none">
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                <strong>Designed Mission-Critical Comprehensive Remote Interfaces That Increased Usability And Boosted Engagement By 30%.</strong> 
-                Moved From Over-Cluttered Interfaces To A Streamlined Dashboard, Prioritizing Readability And Quick Access To Critical Information.
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                <strong>Developed Interactive Map Visualizations (Using Leaflet or Mapbox) Enabling Teams Visualize Complex Geospatial Data Efficiently.</strong> 
-                This Elevated the User Experience, Allowing Seamless Navigation And Data Interaction.
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                <strong>Reduced User Errors Through Enhanced User Workflows, Resulting In Faster Response Times.</strong> 
-                Worked On Crafting Accessible Client-Server Features Optimized For Long-Operational Hours And Medium To High-Stress Situations.
-              </li>
-              <li className="py-5 text-neutral-300">
-                <strong>Seamlessly Integrated APIs Between Client And Server To Support Real-Time, High-Stakes Decision-Making.</strong> 
-                Helped Bridge Front-End Elegance With Back-End Robustness.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Challenge */}
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-white pb-4 border-b border-neutral-800">
-            Challenge
-          </h2>
-          <div className="py-8">
-            <p className="mb-5 text-neutral-300">
-              Designing for Aerospace And Defense Meant Working in Mission-Critical Environments Where Both User-Friendliness 
-              And High-Tech Precision Are Crucial. The Challenge Was To Simplify Complex Data Systems While Ensuring Accuracy, 
-              Security, And Usability Under Diverse Network Conditions, Screen Sizes, And User Capabilities.
-            </p>
-            
-            <div className="bg-neutral-950 border-l-4 border-white p-6 my-8 rounded">
-              <p className="m-0 italic text-neutral-200">
-                The primary challenge was balancing sophisticated functionality with intuitive design in high-stakes, 
-                mission-critical environments where every second counts.
+        {/* The Challenge */}
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <h2 className="text-4xl font-bold text-center md:text-left">The Challenge</h2>
+            <div className="border border-white rounded-lg p-8 bg-neutral-700/70">
+              <p className="text-white leading-relaxed ">
+                Designing for aerospace and defence meant working in mission-critical environments where every interface decision had real consequences. Systems needed to be fast, intuitive, and efficient. The challenge was to simplify complex data systems while ensuring accuracy, usability, and trust for operators and engineers.
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Process */}
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-white pb-4 border-b border-neutral-800">
-            Process
-          </h2>
-          <div className="py-8">
-            <ul className="list-none">
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Conducted stakeholder interviews and user research to understand workflows
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Created wireframes and prototypes to test usability before implementation
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Designed data-driven dashboards that emphasized speed and clarity
-              </li>
-              <li className="py-5 text-neutral-300">
-                Developed scalable design systems to support multiple platforms and use cases
-              </li>
-              <li className="py-5 text-neutral-300">
-                Collaborated closely with engineers and domain experts to ensure feasibility and alignment with real-world operations
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Solutions */}
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-white pb-4 border-b border-neutral-800">
-            Solutions
-          </h2>
-          <div className="py-8">
-            <ul className="list-none">
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Website Redesign: Improved usability, leading to a 30% increase in user engagement
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Mission Dashboards: Designed interactive visualizations for real-time decision-making
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Dark-Mode UI: Crafted accessible dark-mode layouts optimized for long operational shifts
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Design Systems: Introduced component libraries that reduced design-to-development time by 15%
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Impact */}
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-white pb-4 border-b border-neutral-800">
-            Impact
-          </h2>
-          <div className="py-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8 mb-8">
-              <div className="bg-neutral-950 p-8 border border-neutral-800 rounded text-center">
-                <span className="text-4xl md:text-5xl font-bold text-white block mb-3">30%</span>
-                <span className="text-sm text-neutral-500 uppercase tracking-wider">Increased Engagement</span>
+        {/* My Contributions */}
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <h2 className="text-4xl font-bold mb-12 text-center">My Contributions</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="p-8">
+              <div className="flex items-start gap-4">
+                <ArrowRight className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">End-To-End Redesign</h3>
+                  <p className="text-white">
+                    Led a comprehensive website redesign that improved usability and boosted engagement by 30%.
+                  </p>
+                </div>
               </div>
-              <div className="bg-neutral-950 p-8 border border-neutral-800 rounded text-center">
-                <span className="text-4xl md:text-5xl font-bold text-white block mb-3">34%</span>
-                <span className="text-sm text-neutral-500 uppercase tracking-wider">Time Saved</span>
+            </div>
+            <div className="p-8">
+              <div className="flex items-start gap-4">
+                <Layout className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Mission Dashboards</h3>
+                  <p className="text-white">
+                    Designed interactive data visualization dashboards, helping teams interpret complex information quickly and accurately.
+                  </p>
+                </div>
               </div>
-              <div className="bg-neutral-950 p-8 border border-neutral-800 rounded text-center">
-                <span className="text-4xl md:text-5xl font-bold text-white block mb-3">15%</span>
-                <span className="text-sm text-neutral-500 uppercase tracking-wider">Improved Efficiency</span>
+            </div>
+            <div className="p-8">
+              <div className="flex items-start gap-4">
+                <PenTool className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Scalable Design Systems</h3>
+                  <p className="text-white">
+                    Built component-based design systems, ensuring consistency and reducing design-to-development time by 15%.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="p-8">
+              <div className="flex items-start gap-4">
+                <Moon className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Dark-Mode UI</h3>
+                  <p className="text-white">
+                    Created accessible dark-mode patterns optimized for long operational hours and mission environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="p-8">
+              <div className="flex items-start gap-4">
+                <Layers className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Cross-Functional Collaboration</h3>
+                  <p className="text-white">
+                    Partnered with engineers, product managers, and domain experts to align designs with real-world requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Process & Solutions */}
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Process */}
+            <div>
+              <h2 className="text-4xl font-bold mb-8">Process</h2>
+              <div className="space-y-6">
+                {[1,2,3,4,5].map((num) => (
+                  <div key={num} className="flex gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-neutral-700/70 text-white rounded-full flex items-center justify-center font-semibold">{num}</div>
+                    <p className="text-white pt-1">
+                      {[
+                        "Conducted stakeholder interviews and user research to understand workflows",
+                        "Created wireframes and prototypes to test usability before implementation",
+                        "Designed data-driven dashboards that emphasized speed and clarity",
+                        "Developed scalable design systems to support multiple platforms and use cases",
+                        "Collaborated closely with engineers and domain experts to ensure feasibility and alignment with real-world operations"
+                      ][num-1]}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <ul className="list-none">
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Increased operational efficiency by 20% through streamlined workflows and intuitive layouts.
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Delivered user-centered design solutions that balanced precision with usability.
-              </li>
-              <li className="py-5 border-b border-neutral-900 text-neutral-300">
-                Strengthened design culture by introducing scalable systems and usability testing practices.
-              </li>
-            </ul>
+            {/* Solutions */}
+            <div>
+              <h2 className="text-4xl font-bold mb-8">Solutions</h2>
+              <div className="space-y-4">
+                {[
+                  {title:"UI Redesign", desc:"Improved usability, leading to a 30% increase in user engagement"},
+                  {title:"Mission Dashboards", desc:"Designed interactive visualizations for real-time decision-making"},
+                  {title:"Dark-Mode UI", desc:"Crafted accessible dark-mode layouts optimized for long operational shifts"},
+                  {title:"Design Systems", desc:"Introduced component libraries that reduced design-to-development time by 15%"}
+                ].map((item, idx) => (
+                  <div key={idx} className="border border-white rounded-lg p-6 bg-neutral-700/70">
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-white text-sm">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* ===== Footer ===== */}
-      <Footer />
+        {/* Impact & Results */}
+        <section className="max-w-7xl mx-auto px-6 py-16 mb-16">
+          <h2 className="text-4xl font-bold mb-12 text-center">Impact & Results</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { value:"20%", title:"Operational Efficiency Increase", desc:"Through Streamlined Workflows And Intuitive Layouts"},
+              { value:"30%", title:"User Engagement Boost", desc:"Delivered User-Centered Design Solutions That Balanced Precision With Usability"},
+              { value:"15%", title:"Faster Development", desc:"Strengthened Design Culture By Introducing Scalable Systems And Establishing Design Principles"}
+            ].map((item, idx) => (
+              <div key={idx} className="border border-white rounded-lg p-8 text-center">
+                <div className="text-5xl font-bold text-white mb-4">{item.value}</div>
+                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                <p className="text-white text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Footer */}
+        <Footer />
+      </div>
     </div>
   );
-};
-
-export default NewspaceProject;
+}
