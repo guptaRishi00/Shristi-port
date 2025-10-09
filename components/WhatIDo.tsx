@@ -27,7 +27,7 @@ export default function WhatIDo() {
             {skills[0].map((skill, index) => (
               <div
                 key={index}
-                className="px-6 py-3 border border-white/30 rounded-full text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
+                className="px-6 py-3 border border-white/30 rounded-lg  text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
               >
                 {skill}
               </div>
@@ -39,7 +39,7 @@ export default function WhatIDo() {
             {skills[1].map((skill, index) => (
               <div
                 key={index}
-                className="px-6 py-3 border border-white/30 rounded-full text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
+                className="px-6 py-3 border border-white/30 rounded-lg  text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
               >
                 {skill}
               </div>
@@ -51,7 +51,7 @@ export default function WhatIDo() {
             {skills[2].map((skill, index) => (
               <div
                 key={index}
-                className="px-6 py-3 border border-white/30 rounded-full text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
+                className="px-6 py-3 border border-white/30 rounded-lg text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
               >
                 {skill}
               </div>

@@ -1,9 +1,20 @@
 import React from 'react';
 
 export default function Philosophy() {
+  // Paste your custom image from the public folder here
+  const backgroundImagePath = "/bg2.png"; 
+
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 px-8 sm:px-12 lg:px-16">
-      <div className="max-w-7xl mx-auto">
+    <section
+      className="min-h-screen py-20 px-8 sm:px-12 lg:px-16 relative"
+      style={{
+        background: `url(${backgroundImagePath}) center/cover no-repeat`,
+      }}
+    >
+      {/* Dark overlay ON TOP of the image */}
+      <div className="absolute inset-0 bg-black/70 z-10"></div> {/* 70% black overlay */}
+
+      <div className="max-w-7xl mx-auto relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Heading */}
           <div>

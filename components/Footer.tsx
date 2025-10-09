@@ -1,9 +1,20 @@
 import React from 'react';
 
 export default function Footer() {
+  // Background image from public folder
+  const backgroundImagePath = "/bg2.png"; // <-- Replace with your image name
+
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-4 px-6 sm:px-12 lg:px-16 w-screen">
-      <div className="max-w-7xl mx-auto">
+    <footer
+      className="py-4 px-6 sm:px-12 lg:px-16 relative w-screen"
+      style={{
+        background: `url(${backgroundImagePath}) center/cover no-repeat`,
+      }}
+    >
+      {/* Dark overlay on top of the image to match Philosophy section */}
+      <div className="absolute inset-0 bg-black/70 z-10"></div> {/* 70% black overlay */}
+
+      <div className="max-w-7xl mx-auto relative z-20">
         {/* Main Content */}
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -94,3 +105,4 @@ export default function Footer() {
     </footer>
   );
 }
+

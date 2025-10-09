@@ -23,10 +23,11 @@ export default function Home() {
   <div className="max-w-7xl w-full">
     <About />
     <WhatIDo />
-    <Education />
-    <Philosophy />
-    <DesignProcess />
     <FeaturedProjects />
+    <Philosophy />
+    <Education />
+    <DesignProcess />
+   
     
   </div>
    <div className="-mx-5 sm:-mx-10">

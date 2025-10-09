@@ -22,16 +22,23 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-8 sm:px-12 lg:px-16 pt-32 sm:pt-40 lg:pt-48">
         <div className="max-w-2xl text-left">
-          {/* Main Heading with Text Generate Effect */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            <TextGenerateEffect
-              words={"\nHi, I'm Shristi"}
-              className="text-white"
-              filter={true}
-              duration={0.5}
-            />
-          </h1>
+          {/* Main Heading */}
+         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 flex flex-col">
+  {/* First Line */}
+  <span>Hi,</span>
 
+  {/* Second Line */}
+  <span className="flex flex-wrap">
+    <span>I'm&nbsp;</span>
+    <TextGenerateEffect
+      words="Shristi"
+      className="text-white"
+      filter={true}
+      duration={0.3}
+      colors={["#f5f5d7","#f7e9b0","#fcd07b","#f7d26c","#e8c86a","#e5b86c","#f5f5d7"]}
+    />
+  </span>
+</h1>
           {/* Subtitle */}
           <h2 className="text-xl sm:text-2xl font-semibold text-white mb-6">
             A UI/UX DESIGNER

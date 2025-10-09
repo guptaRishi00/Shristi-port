@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import NewspaceProject from '@/app/Projects/Newspace/page';
 
-
 export default function FeaturedProjects() {
   const projects = [
     {
@@ -32,7 +31,11 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section className="min-h-screen bg-black py-20 px-8 sm:px-12 lg:px-16">
+    // Added id="projects" for smooth scrolling
+    <section
+      id="projects"
+      className="min-h-screen bg-black py-20 px-8 sm:px-12 lg:px-16"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16">
