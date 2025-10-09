@@ -6,9 +6,7 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -16,7 +14,6 @@ const Navbar: React.FC = () => {
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element && lenisInstance) {
-      // Offset of 80px so the section title is not hidden under navbar
       lenisInstance.scrollTo(element, { offset: -80, duration: 1.2 });
     }
   };
@@ -28,10 +25,10 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-8 sm:px-12 py-6 flex justify-between items-center w-full">
-        <a href="/" className="text-white font-bold text-xl">
-         
-        </a>
+        {/* Left side empty */}
+        <div className="w-1/3"></div>
 
+        {/* Right side buttons */}
         <div className="flex items-center space-x-6">
           <button
             onClick={() => handleScrollTo("about")}
