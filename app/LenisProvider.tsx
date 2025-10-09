@@ -9,7 +9,7 @@ export let lenisInstance: Lenis | null = null;
 export default function LenisProvider() {
   useEffect(() => {
     lenisInstance = new Lenis({
-      smooth: true,
+      
       lerp: 0.1, // adjust scroll smoothness (lower = smoother)
     });
 
