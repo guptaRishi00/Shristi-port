@@ -1,37 +1,40 @@
-import React from 'react';
-import Image from 'next/image';
-import NewspaceProject from '@/app/Projects/Newspace/page';
+import React from "react";
+import Image from "next/image";
 
 export default function FeaturedProjects() {
   const projects = [
     {
-      image: '/Frame1.png',
-      title: 'BattleGator',
-      description: 'A clean, operable UI for esport and AI-hosted fights using card layouts, fluid indicators, and clear visual hierarchy to enhance readability and user engagement.',
-      link: '#'
+      image: "/Frame1.png",
+      title: "BattleGator",
+      description:
+        "A clean, operable UI for esport and AI-hosted fights using card layouts, fluid indicators, and clear visual hierarchy to enhance readability and user engagement.",
+      link: "#",
     },
     {
-      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&fit=crop',
-      title: 'Jia Organic Eco Resort',
-      description: 'Elegant sustainable aesthetics with clean layouts to reflect the resort\'s eco ethos, blending a nature environment on storytelling to highlight wellness and relaxation.',
-      link: '#'
+      image:
+        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&fit=crop",
+      title: "Jia Organic Eco Resort",
+      description:
+        "Elegant sustainable aesthetics with clean layouts to reflect the resort's eco ethos, blending a nature environment on storytelling to highlight wellness and relaxation.",
+      link: "#",
     },
     {
-      image: 'Frame3.png',
-      title: 'Bloomvest',
-      description: 'Simplified complex financial services into an intuitive, credibility-focused experience. Used data visualization techniques for CA to improve user understanding and trust.',
-      link: '#'
+      image: "/Frame3.png",
+      title: "Bloomvest",
+      description:
+        "Simplified complex financial services into an intuitive, credibility-focused experience. Used data visualization techniques for CA to improve user understanding and trust.",
+      link: "#",
     },
     {
-      image: 'Frame4.png',
-      title: 'Newspace Research & Technologies',
-      description: 'Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.',
-      link: '/Projects/Newspace'
-    }
+      image: "/Frame4.png",
+      title: "Newspace Research & Technologies",
+      description:
+        "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
+      link: "/Projects/Newspace",
+    },
   ];
 
   return (
-    // Added id="projects" for smooth scrolling
     <section
       id="projects"
       className="min-h-screen bg-black py-20 px-8 sm:px-12 lg:px-16"
@@ -51,32 +54,41 @@ export default function FeaturedProjects() {
             >
               {/* Project Image */}
               <div className="relative aspect-video overflow-hidden bg-gray-900">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized={project.image.startsWith("http")} // for external Unsplash images
                 />
               </div>
 
               {/* Project Content */}
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-white">
-                    {project.title}
-                  </h3>
+                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
                   <a
                     href={project.link}
                     className="text-white hover:text-gray-300 transition-colors flex-shrink-0"
                     aria-label="View project"
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
                   </a>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {project.description}
-                </p>
+                <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
               </div>
             </div>
           ))}

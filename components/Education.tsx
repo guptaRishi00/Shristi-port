@@ -1,5 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+
 export default function Education() {
   return (
     <section className="min-h-screen bg-black py-20 px-8 sm:px-12 lg:px-16">
@@ -13,9 +14,7 @@ export default function Education() {
 
             {/* First Education Entry */}
             <div className="space-y-3">
-              <p className="text-gray-400 text-base sm:text-lg">
-                2019 - 2023
-              </p>
+              <p className="text-gray-400 text-base sm:text-lg">2019 - 2023</p>
               <p className="text-white text-base sm:text-lg">
                 Bangalore Central University
               </p>
@@ -26,9 +25,7 @@ export default function Education() {
 
             {/* Second Education Entry */}
             <div className="space-y-3">
-              <p className="text-gray-400 text-base sm:text-lg">
-                2016 - 2018
-              </p>
+              <p className="text-gray-400 text-base sm:text-lg">2016 - 2018</p>
               <p className="text-white text-base sm:text-lg">
                 The Jain International School, Bilaspur C.G
               </p>
@@ -40,10 +37,13 @@ export default function Education() {
 
           {/* Right Side - Image */}
           <div className="flex justify-center lg:justify-end">
-            <img
+            <Image
               src="/Education.png"
               alt="Education"
+              width={400}   // replace with actual width of your image
+              height={400}  // replace with actual height of your image
               className="w-full max-w-sm h-auto object-cover"
+              priority       // optional: ensures image loads quickly for LCP
             />
           </div>
         </div>
