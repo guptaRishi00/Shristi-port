@@ -10,20 +10,20 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 
 export default function Home() {
   return (
-    <main className="relative bg-black flex flex-col items-center overflow-hidden mx-auto px-5 sm:px-10">
-      
+    <main className="relative bg-black flex flex-col items-center overflow-hidden">
+
       {/* Navbar */}
-      <div className="max-w-7xl w-full">
+      <div className="w-full max-w-7xl px-5 sm:px-10">
         <Navbar />
       </div>
 
       {/* Hero Section - Full Width */}
-      <div className="-mx-5 sm:-mx-10 w-screen">
+      <div className="w-full">
         <Hero />
       </div>
 
-      {/* Main Content Sections */}
-      <div className="max-w-7xl w-full">
+      {/* Main Content Sections - Centered with Equal Padding */}
+      <div className="w-full max-w-7xl px-5 sm:px-10 py-12 flex flex-col items-center space-y-12">
         <About />
         <WhatIDo />
         <FeaturedProjects />
@@ -33,10 +33,10 @@ export default function Home() {
       </div>
 
       {/* Footer - Full Width */}
-      <div className="-mx-5 sm:-mx-10 w-screen">
+      <div className="w-full">
         <Footer />
       </div>
-      
+
     </main>
   );
 }
