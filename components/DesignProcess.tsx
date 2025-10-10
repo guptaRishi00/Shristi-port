@@ -10,12 +10,7 @@ export default function DesignProcess() {
       ),
       title: 'Research & Discovery',
       description: 'Deep dive into user needs, business goals, and market research to understand the problem space.',
-      items: [
-        'User interviews',
-        'Competitive analysis',
-        'Stakeholder workshops',
-        'Requirements gathering'
-      ]
+      items: ['User interviews','Competitive analysis','Stakeholder workshops','Requirements gathering']
     },
     {
       icon: (
@@ -25,12 +20,7 @@ export default function DesignProcess() {
       ),
       title: 'Ideation & Strategy',
       description: 'Generate creative solutions and define the design strategy based on research insights.',
-      items: [
-        'Design thinking workshops',
-        'User journey mapping',
-        'Information architecture',
-        'Solution prioritization'
-      ]
+      items: ['Design thinking workshops','User journey mapping','Information architecture','Solution prioritization']
     },
     {
       icon: (
@@ -40,12 +30,7 @@ export default function DesignProcess() {
       ),
       title: 'Design & Prototype',
       description: 'Create high-fidelity designs and interactive prototypes to visualize the final product.',
-      items: [
-        'Wireframing',
-        'Visual design',
-        'Interactive prototyping',
-        'Design system creation'
-      ]
+      items: ['Wireframing','Visual design','Interactive prototyping','Design system creation']
     },
     {
       icon: (
@@ -55,12 +40,7 @@ export default function DesignProcess() {
       ),
       title: 'Test & Iterate',
       description: 'Validate designs through user testing and iterate based on feedback and data.',
-      items: [
-        'Usability testing',
-        'A/B testing',
-        'Feedback analysis',
-        'Design refinement'
-      ]
+      items: ['Usability testing','A/B testing','Feedback analysis','Design refinement']
     },
     {
       icon: (
@@ -70,12 +50,7 @@ export default function DesignProcess() {
       ),
       title: 'Launch & Monitor',
       description: 'Support development during implementation and monitor post-launch performance.',
-      items: [
-        'Development handoff',
-        'Quality assurance',
-        'Performance monitoring',
-        'Post-launch optimization'
-      ]
+      items: ['Development handoff','Quality assurance','Performance monitoring','Post-launch optimization']
     },
     {
       icon: (
@@ -85,29 +60,25 @@ export default function DesignProcess() {
       ),
       title: 'Collaborate & Scale',
       description: 'Work with teams to ensure design consistency and plan for future iterations.',
-      items: [
-        'Team training',
-        'Design system maintenance',
-        'Knowledge sharing',
-        'Continuous improvement'
-      ]
+      items: ['Team training','Design system maintenance','Knowledge sharing','Continuous improvement']
     }
   ];
 
   return (
-    <section className="min-h-screen bg-black py-20 px-8 sm:px-12 lg:px-16">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 py-12 min-h-screen">
+      <div className="w-full max-w-7xl flex flex-col items-center">
+        
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16">
           My Design Process
         </h2>
 
         {/* Process Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {processSteps.map((step, index) => (
             <div
               key={index}
-              className="bg-transparent border border-white/20 rounded-2xl p-6 hover:border-white/40 transition-colors duration-300 mb-6"
+              className="bg-transparent border border-white/20 rounded-2xl p-6 hover:border-white/40 transition-colors duration-300"
             >
               {/* Icon and Title */}
               <div className="flex items-center gap-3 mb-4">
@@ -132,6 +103,7 @@ export default function DesignProcess() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

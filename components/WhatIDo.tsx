@@ -8,15 +8,16 @@ export default function WhatIDo() {
   ];
 
   return (
-    <section className="min-h-screen bg-black py-20 px-8 sm:px-12 lg:px-16">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 py-12">
+      <div className="w-full max-w-6xl flex flex-col items-center">
+        
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-8">
           What I Do
         </h2>
 
         {/* Description */}
-        <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-center max-w-4xl mx-auto mb-12">
+        <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-center max-w-4xl mb-12">
           From understanding user needs to crafting pixel-perfect interfaces, I
           design products that are not just visually appealing but also intuitive
           and impactful. I combine user research, design thinking, and
@@ -25,7 +26,7 @@ export default function WhatIDo() {
         </p>
 
         {/* Skills Tags */}
-        <div className="space-y-4">
+        <div className="flex flex-col space-y-4 w-full">
           {skills.map((row, rowIndex) => (
             <div
               key={rowIndex}
@@ -43,6 +44,7 @@ export default function WhatIDo() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

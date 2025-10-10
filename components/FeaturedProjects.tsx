@@ -35,18 +35,16 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section
-      id="projects"
-      className="min-h-screen bg-black py-20 px-8 sm:px-12 lg:px-16"
-    >
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 py-12">
+      <div className="w-full max-w-7xl flex flex-col items-center">
+        
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16">
           Featured Projects
         </h2>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 w-full">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -95,6 +93,7 @@ export default function FeaturedProjects() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
