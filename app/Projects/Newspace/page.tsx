@@ -17,7 +17,7 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, color }) => (
-  <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+  <div className="p-0 m-0">
     <div className={`w-8 h-8 ${color} mb-3`}>{icon}</div>
     <h3 className="font-semibold mb-2">{title}</h3>
     <p className="text-sm text-gray-400">{description}</p>
@@ -25,66 +25,63 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, col
 );
 
 export default function NewspacePortfolio() {
-  const heroBackgroundImage: string = "/Project4.png"; // from public folder
+  const heroBackgroundImage = "/Project4.png"; // from public folder
 
   return (
     <div className="bg-black text-white">
       {/* Navbar */}
       <Navbar />
 
-     
-{/* Hero Section */}
-<section className="relative w-full min-h-screen">
-  {heroBackgroundImage && (
-    <>
-      <Image
-        src={heroBackgroundImage}
-        alt="Hero background"
-        fill
-        className="object-cover"
-        priority
-      />
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
-    </>
-  )}
+      {/* Hero Section */}
+      <section className="relative w-full min-h-screen">
+        {heroBackgroundImage && (
+          <>
+            <Image
+              src={heroBackgroundImage}
+              alt="Hero background"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+          </>
+        )}
 
-  {/* Hero Content */}
-  <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-24 sm:pt-32 flex flex-col">
-    {/* Back to Projects Button */}
-    <Link href="/#projects" scroll={true}>
-      <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6">
-        <ArrowLeft className="w-4 h-4" />
-        <span>Back To Projects</span>
-      </button>
-    </Link>
+        {/* Hero Content */}
+        <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-24 sm:pt-32 flex flex-col">
+          {/* Back to Projects Button */}
+          <Link href="/#projects" scroll={true}>
+            <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6">
+              <ArrowLeft className="w-4 h-4" />
+              <span>Back To Projects</span>
+            </button>
+          </Link>
 
-    {/* Hero Text */}
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-      Newspace Research & Technologies
-    </h1>
+          {/* Hero Text */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            Newspace Research & Technologies
+          </h1>
 
-    <div className="flex items-center gap-2 mb-4">
-      <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-500" />
-      <span className="text-yellow-500 font-medium text-sm sm:text-base">
-        NDA Protected
-      </span>
-    </div>
+          <div className="flex items-center gap-2 mb-4">
+            <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-500" />
+            <span className="text-yellow-500 font-medium text-sm sm:text-base">
+              NDA Protected
+            </span>
+          </div>
 
-    <p className="text-gray-400 text-sm sm:text-lg max-w-2xl leading-relaxed">
-      (Due to NDA restrictions, I cannot share detailed visuals of this work.<br />
-      Here&apos;s an overview of my role and contributions.)
-    </p>
-  </div>
-</section>
-
-
-
+          <p className="text-gray-400 text-sm sm:text-lg max-w-2xl leading-relaxed">
+            (Due to NDA restrictions, I cannot share detailed visuals of this work.<br />
+            Here&apos;s an overview of my role and contributions.)
+          </p>
+        </div>
+      </section>
 
       {/* Project Overview */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <h2 className="text-4xl font-bold mb-12">Project Overview</h2>
         <div className="grid md:grid-cols-2 gap-12">
-          <div>
+          {/* Left Text */}
+          <div className="flex flex-col justify-start">
             <p className="text-gray-300 leading-relaxed mb-6">
               At Newspace Research & Technologies, I designed mission-critical interfaces for aerospace and defence applications. In these high-stakes environments, design had to be more than aesthetic — it had to deliver clarity, speed, and reliability.
             </p>
@@ -92,6 +89,8 @@ export default function NewspacePortfolio() {
               My focus was on creating systems that empowered users to make confident decisions in complex operational contexts.
             </p>
           </div>
+
+          {/* Right Feature Cards */}
           <div className="grid grid-cols-2 gap-6">
             <FeatureCard
               icon={<Globe className="w-8 h-8" />}
@@ -133,70 +132,67 @@ export default function NewspacePortfolio() {
         </div>
       </section>
 
-      
       {/* My Contributions */}
-<section className="max-w-7xl mx-auto px-6 py-16">
-  <h2 className="text-4xl font-bold mb-12 text-center">My Contributions</h2>
-  <div className="grid md:grid-cols-2 gap-8">
-    <div className="p-8">
-      <div className="flex items-start gap-4">
-        <ArrowRight className="w-6 h-6 text-white flex-shrink-0 mt-1" />
-        <div>
-          <h3 className="text-xl font-semibold mb-3">End-To-End Redesign</h3>
-          <p className="text-white">
-            Led a comprehensive website redesign that improved usability and boosted engagement by 30%.
-          </p>
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-4xl font-bold mb-12 text-center">My Contributions</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="p-8">
+            <div className="flex items-start gap-4">
+              <ArrowRight className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-semibold mb-3">End-To-End Redesign</h3>
+                <p className="text-white">
+                  Led a comprehensive website redesign that improved usability and boosted engagement by 30%.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8">
+            <div className="flex items-start gap-4">
+              <Layout className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Mission Dashboards</h3>
+                <p className="text-white">
+                  Designed interactive data visualization dashboards, helping teams interpret complex information quickly and accurately.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8">
+            <div className="flex items-start gap-4">
+              <PenTool className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Scalable Design Systems</h3>
+                <p className="text-white">
+                  Built component-based design systems, ensuring consistency and reducing design-to-development time by 15%.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8">
+            <div className="flex items-start gap-4">
+              <Moon className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Dark-Mode UI</h3>
+                <p className="text-white">
+                  Created accessible dark-mode patterns optimized for long operational hours and mission environments.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8">
+            <div className="flex items-start gap-4">
+              <Layers className="w-6 h-6 text-white flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Cross-Functional Collaboration</h3>
+                <p className="text-white">
+                  Partnered with engineers, product managers, and domain experts to align designs with real-world requirements.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div className="p-8">
-      <div className="flex items-start gap-4">
-        <Layout className="w-6 h-6 text-white flex-shrink-0 mt-1" />
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Mission Dashboards</h3>
-          <p className="text-white">
-            Designed interactive data visualization dashboards, helping teams interpret complex information quickly and accurately.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="p-8">
-      <div className="flex items-start gap-4">
-        <PenTool className="w-6 h-6 text-white flex-shrink-0 mt-1" />
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Scalable Design Systems</h3>
-          <p className="text-white">
-            Built component-based design systems, ensuring consistency and reducing design-to-development time by 15%.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="p-8">
-      <div className="flex items-start gap-4">
-        <Moon className="w-6 h-6 text-white flex-shrink-0 mt-1" />
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Dark-Mode UI</h3>
-          <p className="text-white">
-            Created accessible dark-mode patterns optimized for long operational hours and mission environments.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="p-8">
-      <div className="flex items-start gap-4">
-        <Layers className="w-6 h-6 text-white flex-shrink-0 mt-1" />
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Cross-Functional Collaboration</h3>
-          <p className="text-white">
-            Partnered with engineers, product managers, and domain experts to align designs with real-world requirements.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+      </section>
 
       {/* Process & Solutions */}
       <section className="max-w-7xl mx-auto px-6 py-16">
