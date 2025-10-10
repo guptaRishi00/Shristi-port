@@ -46,26 +46,26 @@ export default function FeaturedProjects() {
         </h2>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
               className="bg-transparent border border-white/20 rounded-2xl overflow-hidden hover:border-white/40 transition-all duration-300 group"
             >
               {/* Project Image */}
-              <div className="relative aspect-video overflow-hidden bg-gray-900">
+              <div className="relative aspect-video overflow-hidden bg-gray-900 rounded-t-2xl">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  unoptimized={project.image.startsWith("http")} // for external Unsplash images
+                  unoptimized={project.image.startsWith("http")} // only for external images
                 />
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
+              <div className="p-6 sm:p-6">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-bold text-white">{project.title}</h3>
                   <a
@@ -74,7 +74,7 @@ export default function FeaturedProjects() {
                     aria-label="View project"
                   >
                     <svg
-                      className="w-5 h-5"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -88,7 +88,9 @@ export default function FeaturedProjects() {
                     </svg>
                   </a>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed break-words">
+                  {project.description}
+                </p>
               </div>
             </div>
           ))}

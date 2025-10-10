@@ -36,14 +36,14 @@ export default function Education() {
           </div>
 
           {/* Right Side - Image */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <Image
               src="/Education.png"
               alt="Education"
-              width={400}   // replace with actual width of your image
-              height={400}  // replace with actual height of your image
-              className="w-full max-w-sm h-auto object-cover"
-              priority       // optional: ensures image loads quickly for LCP
+              width={400}   
+              height={400}  
+              className="w-full max-w-xs sm:max-w-sm h-auto object-cover"
+              priority
             />
           </div>
         </div>

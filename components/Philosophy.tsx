@@ -1,29 +1,28 @@
-import React from 'react';
+import React from "react";
 
 export default function Philosophy() {
-  // Paste your custom image from the public folder here
-  const backgroundImagePath = "/bg2.png"; 
+  const backgroundImagePath = "/bg2.png";
 
   return (
     <section
-      className="min-h-screen py-20 px-8 sm:px-12 lg:px-16 relative"
-      style={{
-        background: `url(${backgroundImagePath}) center/cover no-repeat`,
-      }}
+      className="min-h-screen py-20 px-8 sm:px-12 lg:px-16 relative bg-center bg-cover"
+      style={{ backgroundImage: `url(${backgroundImagePath})` }}
     >
-      {/* Dark overlay ON TOP of the image */}
-      <div className="absolute inset-0 bg-black/70 z-10"></div> {/* 70% black overlay */}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70 z-10"></div>
 
       <div className="max-w-7xl mx-auto relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Heading */}
           <div>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              My
-              <br />
-              Design
-              <br />
-              Philosophy
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
+              {/* Large screens: 3 lines using inline block + hidden on smaller */}
+              <span className="block lg:hidden">My Design Philosophy</span>
+              <span className="hidden lg:block">
+                <span className="block">My</span>
+                <span className="block">Design</span>
+                <span className="block">Philosophy</span>
+              </span>
             </h2>
           </div>
 

@@ -107,30 +107,23 @@ export default function DesignProcess() {
           {processSteps.map((step, index) => (
             <div
               key={index}
-              className="bg-transparent border border-black rounded-2xl p-6 hover:border-white/40 transition-colors duration-300"
+              className="bg-transparent border border-white/20 rounded-2xl p-6 hover:border-white/40 transition-colors duration-300 mb-6"
             >
               {/* Icon and Title */}
               <div className="flex items-center gap-3 mb-4">
-                <div className="text-white">
-                  {step.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white">
-                  {step.title}
-                </h3>
+                <div className="text-white">{step.icon}</div>
+                <h3 className="text-xl font-bold text-white min-w-0">{step.title}</h3>
               </div>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              <p className="text-gray-400 text-sm sm:text-base mb-4 leading-relaxed">
                 {step.description}
               </p>
 
               {/* Items List */}
               <ul className="space-y-2">
                 {step.items.map((item, itemIndex) => (
-                  <li
-                    key={itemIndex}
-                    className="text-gray-300 text-sm flex items-start"
-                  >
+                  <li key={itemIndex} className="text-gray-300 text-sm sm:text-base flex items-start">
                     <span className="text-white mr-2">•</span>
                     {item}
                   </li>

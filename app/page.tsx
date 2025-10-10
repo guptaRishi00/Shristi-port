@@ -7,35 +7,36 @@ import Philosophy from "@/components/Philosophy";
 import DesignProcess from "@/components/DesignProcess";
 import Footer from "@/components/Footer";
 import FeaturedProjects from "@/components/FeaturedProjects";
+
 export default function Home() {
   return (
-    
-      <main className="relative  bg-black justify-center items-center flex flex-col overflow-hidden mx-auto sm:px-10 px-5">
-        <div className="max-w-7xl w-full">
-    <Navbar />
-  </div>
-
-  
-  <div className="-mx-5 sm:-mx-10 ">
-  <Hero />
-</div>
-
-  <div className="max-w-7xl w-full">
-    <About />
-    <WhatIDo />
-    <FeaturedProjects />
-    <Philosophy />
-    <Education />
-    <DesignProcess />
-   
-    
-  </div>
-   <div className="-mx-5 sm:-mx-10">
-  <Footer />
-</div>
-        
-      </main>
+    <main className="relative bg-black flex flex-col items-center overflow-hidden mx-auto px-5 sm:px-10">
       
-    
+      {/* Navbar */}
+      <div className="max-w-7xl w-full">
+        <Navbar />
+      </div>
+
+      {/* Hero Section - Full Width */}
+      <div className="-mx-5 sm:-mx-10 w-screen">
+        <Hero />
+      </div>
+
+      {/* Main Content Sections */}
+      <div className="max-w-7xl w-full">
+        <About />
+        <WhatIDo />
+        <FeaturedProjects />
+        <Philosophy />
+        <Education />
+        <DesignProcess />
+      </div>
+
+      {/* Footer - Full Width */}
+      <div className="-mx-5 sm:-mx-10 w-screen">
+        <Footer />
+      </div>
+      
+    </main>
   );
 }

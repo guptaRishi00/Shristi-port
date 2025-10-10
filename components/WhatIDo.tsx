@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 export default function WhatIDo() {
   const skills = [
-    ['UI/UX Design', 'User Research', 'UI/UX Design', 'Design Thinking', 'Prototyping'],
-    ['Design Systems', 'User-Centric Design', 'UX Strategy', 'Product Design'],
-    ['Usability Testing', 'Collaboration']
+    ["UI/UX Design", "User Research", "UI/UX Design", "Design Thinking", "Prototyping"],
+    ["Design Systems", "User-Centric Design", "UX Strategy", "Product Design"],
+    ["Usability Testing", "Collaboration"],
   ];
 
   return (
@@ -17,46 +17,31 @@ export default function WhatIDo() {
 
         {/* Description */}
         <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-center max-w-4xl mx-auto mb-12">
-          From understanding user needs to crafting pixel-perfect interfaces, I design products that are not just visually appealing but also intuitive and impactful. I combine user research, design thinking, and system-driven design to create digital experiences that feel effortless and meaningful. Here are some of the things I do:
+          From understanding user needs to crafting pixel-perfect interfaces, I
+          design products that are not just visually appealing but also intuitive
+          and impactful. I combine user research, design thinking, and
+          system-driven design to create digital experiences that feel effortless
+          and meaningful. Here are some of the things I do:
         </p>
 
         {/* Skills Tags */}
         <div className="space-y-4">
-          {/* First Row */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {skills[0].map((skill, index) => (
-              <div
-                key={index}
-                className="px-6 py-3 border border-white/30 rounded-lg  text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-
-          {/* Second Row */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {skills[1].map((skill, index) => (
-              <div
-                key={index}
-                className="px-6 py-3 border border-white/30 rounded-lg  text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-
-          {/* Third Row */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {skills[2].map((skill, index) => (
-              <div
-                key={index}
-                className="px-6 py-3 border border-white/30 rounded-lg text-white text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
+          {skills.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="flex flex-wrap justify-center gap-3 sm:gap-4"
+            >
+              {row.map((skill, index) => (
+                <div
+                  key={index}
+                  className="w-full sm:w-auto text-center px-6 py-3 border border-white/30 rounded-lg text-white 
+                             text-sm sm:text-base font-medium hover:bg-white/10 transition-colors duration-300"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
