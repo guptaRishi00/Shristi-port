@@ -1,53 +1,110 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Education() {
-  return (
-    <section className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 py-12 min-h-screen">
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
-        
-        {/* Left Side - Content */}
-        <div className="flex-1 space-y-10 text-center lg:text-left">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-            Education
-          </h2>
+  const [educationRef, educationInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-          {/* First Education Entry */}
-          <div className="space-y-3">
-            <p className="text-gray-400 text-base sm:text-lg">2019 - 2023</p>
-            <p className="text-white text-base sm:text-lg">
-              Bangalore Central University
-            </p>
-            <p className="text-white text-lg sm:text-xl font-semibold">
+  return (
+    <section className="w-full max-w-6xl min-h-screen bg-black flex justify-center items-center py-20">
+      <motion.div 
+        ref={educationRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full flex flex-col lg:flex-row items-center justify-around "
+      >
+        {/* Left Side: Content */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="flex-1 space-y-12 text-center lg:text-left"
+        >
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="text-5xl md:text-6xl font-bold text-white"
+          >
+            Education
+          </motion.h2>
+
+          {/* Education Entry 1: University */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            className="space-y-2"
+          >
+            <p className="text-gray-400">2019 - 2023</p>
+            <p className="text-white text-lg">Bangalore Central University</p>
+            <p className="text-white text-2xl font-bold">
               Bachelor Of Visual Arts, Product Design
             </p>
-          </div>
+          </motion.div>
 
-          {/* Second Education Entry */}
-          <div className="space-y-3">
-            <p className="text-gray-400 text-base sm:text-lg">2016 - 2018</p>
-            <p className="text-white text-base sm:text-lg">
+          {/* Education Entry 2: School */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+            className="space-y-2"
+          >
+            <p className="text-gray-400">2016 - 2018</p>
+            <p className="text-white text-xl">
               The Jain International School, Bilaspur C.G
             </p>
-            <p className="text-white text-lg sm:text-xl font-semibold">
+            <p className="text-white text-2xl font-bold">
               Higher Secondary School
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Right Side - Image */}
-        <div className="flex justify-center lg:justify-end mt-8 lg:mt-0 flex-1">
-          <Image
-            src="/Education.png"
-            alt="Education"
-            width={400}   
-            height={400}  
-            className="w-full max-w-xs sm:max-w-sm h-auto object-cover"
-            priority
-          />
-        </div>
+        {/* Right Side: Image with Layered Effect */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className=" flex justify-center lg:justify-start mt-10 lg:mt-0"
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={educationInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            className="relative w-[280px] h-[420px] sm:w-[320px] sm:h-[480px]"
+          >
+            {/* The Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={educationInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+              className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl z-10"
+            >
+              <Image
+                src="/Education.png"
+                alt="A photo of the graduate in cap and gown"
+                fill
+                priority
+                className="object-cover"
+              />
+            </motion.div>
 
-      </div>
+            {/* The dark shape behind, offset from the image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={educationInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
+              className="absolute top-[-3rem] right-[-4rem] w-[320px] bg-[#1C1C1C] h-[450px] rounded-lg z-0"
+            ></motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

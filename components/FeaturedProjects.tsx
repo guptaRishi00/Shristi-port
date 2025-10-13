@@ -1,18 +1,25 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function FeaturedProjects() {
+  const [projectsRef, projectsInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const projects = [
     {
-      image: "/Frame1.png",
-      title: "BattinGator",
+      image: "/betting.png",
+      title: "BettinGator",
       description:
         "A clean, operable UI for esport and AI-hosted fights using card layouts, fluid indicators, and clear visual hierarchy to enhance readability and user engagement.",
       link: "#",
     },
     {
-      image:
-        "/frame2.png",
+      image: "/frame2.png",
       title: "Jia Organic Eco Resort",
       description:
         "Elegant sustainable aesthetics with clean layouts to reflect the resort's eco ethos, blending a nature environment on storytelling to highlight wellness and relaxation.",
@@ -35,37 +42,62 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section id="projects" className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 pt-6 pb-12">
-      <div className="w-full max-w-7xl flex flex-col items-center">
-        
+    <section
+      id="projects"
+      className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-0 pt-6 pb-12 "
+    >
+      <motion.div 
+        ref={projectsRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full flex flex-col items-center"
+      >
         {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16">
+        <motion.h2 
+          initial={{ opacity: 0, y: 30 }}
+          animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16"
+        >
           Featured Projects
-        </h2>
+        </motion.h2>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 w-full">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 w-full"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={projectsInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.6 + (index * 0.1), 
+                ease: "easeOut" 
+              }}
               className="bg-transparent border border-white/20 rounded-2xl overflow-hidden hover:border-white/40 transition-all duration-300 group"
             >
               {/* Project Image */}
-              <div className="relative aspect-video overflow-hidden bg-gray-900 rounded-t-2xl">
+              <div className="relative aspect-video overflow-hidden bg-black rounded-t-2xl">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  unoptimized={project.image.startsWith("http")} // only for external images
+                  className="object-cover  group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
               </div>
 
               {/* Project Content */}
               <div className="p-6 sm:p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                <div className="flex items-start justify-between mb-8">
+                  <h3 className="text-xl font-bold text-white">
+                    {project.title}
+                  </h3>
                   <a
                     href={project.link}
                     className="text-white hover:text-gray-300 transition-colors flex-shrink-0"
@@ -86,15 +118,14 @@ export default function FeaturedProjects() {
                     </svg>
                   </a>
                 </div>
-                <p className="text-gray-400 text-sm sm:text-base leading-relaxed break-words">
+                <p className="text-gray-400 text-sm sm:text-xl leading-relaxed break-words">
                   {project.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

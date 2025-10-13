@@ -1,5 +1,7 @@
 "use client";
 import React, { FC } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface ProcessStep {
   icon: React.ReactNode;
@@ -11,7 +13,12 @@ interface ProcessStep {
 const processSteps: ProcessStep[] = [
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -23,11 +30,21 @@ const processSteps: ProcessStep[] = [
     title: "Research & Discovery",
     description:
       "Deep dive into user needs, business goals, and market research to understand the problem space.",
-    items: ["User interviews", "Competitive analysis", "Stakeholder workshops", "Requirements gathering"],
+    items: [
+      "User interviews",
+      "Competitive analysis",
+      "Stakeholder workshops",
+      "Requirements gathering",
+    ],
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -39,11 +56,21 @@ const processSteps: ProcessStep[] = [
     title: "Ideation & Strategy",
     description:
       "Generate creative solutions and define the design strategy based on research insights.",
-    items: ["Design thinking workshops", "User journey mapping", "Information architecture", "Solution prioritization"],
+    items: [
+      "Design thinking workshops",
+      "User journey mapping",
+      "Information architecture",
+      "Solution prioritization",
+    ],
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -53,12 +80,23 @@ const processSteps: ProcessStep[] = [
       </svg>
     ),
     title: "Design & Prototype",
-    description: "Create high-fidelity designs and interactive prototypes to visualize the final product.",
-    items: ["Wireframing", "Visual design", "Interactive prototyping", "Design system creation"],
+    description:
+      "Create high-fidelity designs and interactive prototypes to visualize the final product.",
+    items: [
+      "Wireframing",
+      "Visual design",
+      "Interactive prototyping",
+      "Design system creation",
+    ],
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -68,12 +106,23 @@ const processSteps: ProcessStep[] = [
       </svg>
     ),
     title: "Test & Iterate",
-    description: "Validate designs through user testing and iterate based on feedback and data.",
-    items: ["Usability testing", "A/B testing", "Feedback analysis", "Design refinement"],
+    description:
+      "Validate designs through user testing and iterate based on feedback and data.",
+    items: [
+      "Usability testing",
+      "A/B testing",
+      "Feedback analysis",
+      "Design refinement",
+    ],
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -83,12 +132,23 @@ const processSteps: ProcessStep[] = [
       </svg>
     ),
     title: "Launch & Monitor",
-    description: "Support development during implementation and monitor post-launch performance.",
-    items: ["Development handoff", "Quality assurance", "Performance monitoring", "Post-launch optimization"],
+    description:
+      "Support development during implementation and monitor post-launch performance.",
+    items: [
+      "Development handoff",
+      "Quality assurance",
+      "Performance monitoring",
+      "Post-launch optimization",
+    ],
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -98,49 +158,149 @@ const processSteps: ProcessStep[] = [
       </svg>
     ),
     title: "Collaborate & Scale",
-    description: "Work with teams to ensure design consistency and plan for future iterations.",
-    items: ["Team training", "Design system maintenance", "Knowledge sharing", "Continuous improvement"],
+    description:
+      "Work with teams to ensure design consistency and plan for future iterations.",
+    items: [
+      "Team training",
+      "Design system maintenance",
+      "Knowledge sharing",
+      "Continuous improvement",
+    ],
   },
 ];
 
 const DesignProcess: FC = () => {
+  const [processRef, processInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <section className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 pt-8 pb-12">
-      <div className="w-full max-w-7xl flex flex-col items-center">
+      <motion.div 
+        ref={processRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full  flex flex-col items-center"
+      >
         {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16">
+        <motion.h2 
+          initial={{ opacity: 0, y: 30 }}
+          animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16"
+        >
           My Design Process
-        </h2>
+        </motion.h2>
 
         {/* Process Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+        >
           {processSteps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-transparent border border-transparent rounded-2xl p-6 hover:border-white/40 transition-colors duration-300"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={processInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.6 + (index * 0.1), 
+                ease: "easeOut" 
+              }}
+              whileHover={{ 
+                scale: 1.02, 
+                y: -5,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="bg-transparent border rounded-4xl p-6 border-[#FFFFFF66] transition-colors duration-300 cursor-pointer"
             >
               {/* Icon and Title */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="text-white">{step.icon}</div>
-                <h3 className="text-xl font-bold text-white min-w-0">{step.title}</h3>
-              </div>
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
+                className="flex items-center gap-3 mb-4"
+              >
+                <motion.div 
+                  initial={{ opacity: 0, rotate: -180, scale: 0.5 }}
+                  animate={processInView ? { opacity: 1, rotate: 0, scale: 1 } : { opacity: 0, rotate: -180, scale: 0.5 }}
+                  transition={{ duration: 0.6, delay: 0.9 + (index * 0.1), ease: "easeOut" }}
+                  whileHover={{ 
+                    rotate: 360, 
+                    scale: 1.1,
+                    transition: { duration: 0.4, ease: "easeInOut" }
+                  }}
+                  className="text-white"
+                >
+                  {step.icon}
+                </motion.div>
+                <motion.h3 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                  transition={{ duration: 0.5, delay: 1.0 + (index * 0.1), ease: "easeOut" }}
+                  className="text-xl font-bold text-white min-w-0"
+                >
+                  {step.title}
+                </motion.h3>
+              </motion.div>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm sm:text-base mb-4 leading-relaxed">{step.description}</p>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 1.1 + (index * 0.1), ease: "easeOut" }}
+                className="text-gray-400 text-sm sm:text-base mb-4 leading-relaxed"
+              >
+                {step.description}
+              </motion.p>
 
               {/* Items List */}
-              <ul className="space-y-2">
+              <motion.ul 
+                initial={{ opacity: 0 }}
+                animate={processInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.3, delay: 1.2 + (index * 0.1), ease: "easeOut" }}
+                className="space-y-2"
+              >
                 {step.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-gray-300 text-sm sm:text-base flex items-start">
-                    <span className="text-white mr-2">•</span>
+                  <motion.li
+                    key={itemIndex}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                    transition={{ 
+                      duration: 0.4, 
+                      delay: 1.3 + (index * 0.1) + (itemIndex * 0.05), 
+                      ease: "easeOut" 
+                    }}
+                    whileHover={{ 
+                      x: 5,
+                      transition: { duration: 0.2, ease: "easeOut" }
+                    }}
+                    className="text-gray-300 text-sm sm:text-base flex items-start"
+                  >
+                    <motion.span 
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={processInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                      transition={{ 
+                        duration: 0.3, 
+                        delay: 1.4 + (index * 0.1) + (itemIndex * 0.05), 
+                        ease: "easeOut" 
+                      }}
+                      className="text-white mr-2"
+                    >
+                      •
+                    </motion.span>
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
-            </div>
+              </motion.ul>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

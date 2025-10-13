@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <motion.main
       className="relative bg-black flex flex-col items-center overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}   // Start invisible & slightly lower
-      animate={{ opacity: 1, y: 0 }}    // Animate to fully visible
-      exit={{ opacity: 0, y: -20 }}     // Optional exit animation
+      initial={{ opacity: 0, y: 20 }} // Start invisible & slightly lower
+      animate={{ opacity: 1, y: 0 }} // Animate to fully visible
+      exit={{ opacity: 0, y: -20 }} // Optional exit animation
       transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
     >
       {/* Navbar */}
@@ -31,13 +31,18 @@ export default function Home() {
       </div>
 
       {/* Main Content Sections - Centered with Equal Padding */}
-      <div className="w-full max-w-7xl px-5 sm:px-10 py-12 flex flex-col items-center space-y-12">
-        <About />
-        <WhatIDo />
-        <FeaturedProjects />
+      <div className="flex flex-col items-center ">
+        <div className="w-full max-w-7xl px-5 sm:px-10 py-12 flex flex-col items-center space-y-12">
+          <About />
+          <WhatIDo />
+          <FeaturedProjects />
+        </div>
         <Philosophy />
-        <Education />
-        <DesignProcess />
+
+        <div className="w-full max-w-8xl px-5 sm:px-10 py-12 flex flex-col items-center space-y-12">
+          <Education />
+          <DesignProcess />
+        </div>
       </div>
 
       {/* Footer - Full Width */}
