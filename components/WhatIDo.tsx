@@ -1,15 +1,17 @@
-import React from "react";
+"use client";
+import React, { FC } from "react";
 
-export default function WhatIDo() {
-  const skills = [
-    ["UI/UX Design", "User Research", "UI/UX Design", "Design Thinking", "Prototyping"],
-    ["Design Systems", "User-Centric Design", "UX Strategy", "Product Design"],
-    ["Usability Testing", "Collaboration"],
-  ];
+const skills: string[][] = [
+  ["UI/UX Design", "User Research", "UI/UX Design", "Design Thinking", "Prototyping"],
+  ["Design Systems", "User-Centric Design", "UX Strategy", "Product Design"],
+  ["Usability Testing", "Collaboration"],
+];
 
+const WhatIDo: FC = () => {
   return (
-    <section className="w-full bg-black flex flex-col items-center px-6 sm:px-12 lg:px-24 py-16 sm:py-20 lg:py-24">
-      <div className="w-full max-w-6xl flex flex-col items-center">
+    <section className="w-full bg-black flex flex-col items-center px-6 sm:px-12 lg:px-24 pt-32 pb-16 sm:pb-20 lg:pb-20">
+      {/* Top padding kept as pt-32 */}
+      <div className="w-full max-w-7xl flex flex-col items-center">
         
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-8">
@@ -17,7 +19,7 @@ export default function WhatIDo() {
         </h2>
 
         {/* Description */}
-        <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-center max-w-3xl mb-12">
+        <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-center max-w-6xl mb-12">
           From understanding user needs to crafting pixel-perfect interfaces, I
           design products that are not just visually appealing but also intuitive
           and impactful. I combine user research, design thinking, and
@@ -26,7 +28,7 @@ export default function WhatIDo() {
         </p>
 
         {/* Skills Tags */}
-        <div className="flex flex-col space-y-4 w-full">
+        <div className="flex flex-col space-y-4 w-full max-w-6xl">
           {skills.map((row, rowIndex) => (
             <div
               key={rowIndex}
@@ -48,4 +50,6 @@ export default function WhatIDo() {
       </div>
     </section>
   );
-}
+};
+
+export default WhatIDo;

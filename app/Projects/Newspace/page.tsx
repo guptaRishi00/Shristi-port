@@ -33,48 +33,45 @@ export default function NewspacePortfolio() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen">
-        {heroBackgroundImage && (
-          <>
-            <Image
-              src={heroBackgroundImage}
-              alt="Hero background"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/50 z-10"></div>
-          </>
-        )}
+      <section className="relative w-full min-h-[70vh]">
+  {heroBackgroundImage && (
+    <>
+      <Image
+        src={heroBackgroundImage}
+        alt="Hero background"
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
+    </>
+  )}
 
-        {/* Hero Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-24 sm:pt-32 flex flex-col">
-          {/* Back to Projects Button */}
-          <Link href="/#projects" scroll={true}>
-            <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6">
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back To Projects</span>
-            </button>
-          </Link>
+  <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-24 sm:pt-32 flex flex-col">
+    <Link href="/#projects" scroll={true}>
+      <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6">
+        <ArrowLeft className="w-4 h-4" />
+        <span>Back To Projects</span>
+      </button>
+    </Link>
 
-          {/* Hero Text */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-            Newspace Research & Technologies
-          </h1>
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+      Newspace Research & Technologies
+    </h1>
 
-          <div className="flex items-center gap-2 mb-4">
-            <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-500" />
-            <span className="text-yellow-500 font-medium text-sm sm:text-base">
-              NDA Protected
-            </span>
-          </div>
+    <div className="flex items-center gap-2 mb-4">
+      <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-500" />
+      <span className="text-yellow-500 font-medium text-sm sm:text-base">
+        NDA Protected
+      </span>
+    </div>
 
-          <p className="text-gray-400 text-sm sm:text-lg max-w-2xl leading-relaxed">
-            (Due to NDA restrictions, I cannot share detailed visuals of this work.<br />
-            Here&apos;s an overview of my role and contributions.)
-          </p>
-        </div>
-      </section>
+    <p className="text-gray-400 text-sm sm:text-lg max-w-2xl leading-relaxed">
+      (Due to NDA restrictions, I cannot share detailed visuals of this work.<br />
+      Here&apos;s an overview of my role and contributions.)
+    </p>
+  </div>
+</section>
 
       {/* Project Overview */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -120,17 +117,28 @@ export default function NewspacePortfolio() {
         </div>
       </section>
 
-      {/* The Challenge */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <h2 className="text-4xl font-bold">The Challenge</h2>
-          <div className="border border-white rounded-lg p-8">
-            <p className="text-white leading-relaxed">
-              Designing for aerospace and defence meant working in mission-critical environments where every interface decision had real consequences. Systems needed to be fast, intuitive, and efficient. The challenge was to simplify complex data systems while ensuring accuracy, usability, and trust for operators and engineers.
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* The Challenge */}
+<section className="max-w-7xl mx-auto px-6 sm:px-10 py-10">
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    {/* Heading */}
+    <div className="flex items-center justify-center">
+      <h2 className="text-4xl font-bold text-center">
+        The Challenge
+      </h2>
+    </div>
+
+    {/* Right Gray Box */}
+    <div className="bg-white/10 border border-gray-500 rounded-lg p-10 max-w-lg mx-auto h-full">
+      <p className="text-gray-200 leading-relaxed">
+        Designing for aerospace and defence meant working in mission-critical environments where interfaces needed to be clear, reliable, and efficient. The challenge was to simplify complex data systems while ensuring accuracy, usability, and trust for operators and engineers.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
 
       {/* My Contributions */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -209,7 +217,7 @@ export default function NewspacePortfolio() {
                 "Collaborated closely with engineers and domain experts to ensure feasibility and alignment with real-world operations"
               ].map((text, i) => (
                 <div key={i} className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-semibold">
+                  <div className="flex-shrink-0 w-8 h-8 bg-white/10 text-white rounded-full flex items-center justify-center font-semibold">
                     {i + 1}
                   </div>
                   <p className="text-white pt-1">{text}</p>
@@ -228,7 +236,7 @@ export default function NewspacePortfolio() {
                 { title: "Dark-Mode UI", text: "Crafted accessible dark-mode layouts optimized for long operational shifts" },
                 { title: "Design Systems", text: "Introduced component libraries that reduced design-to-development time by 15%" },
               ].map((item, i) => (
-                <div key={i} className="border border-white rounded-lg p-6">
+                <div key={i} className="border border-white bg-white/10 rounded-lg p-6">
                   <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                   <p className="text-white text-sm">{item.text}</p>
                 </div>
