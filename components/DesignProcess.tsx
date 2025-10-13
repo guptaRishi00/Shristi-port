@@ -103,7 +103,7 @@ const processSteps: ProcessStep[] = [
   },
 ];
 
-const DesignProcess: FC = (): JSX.Element => {
+const DesignProcess: FC = () => {
   return (
     <section className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 pt-8 pb-12">
       <div className="w-full max-w-7xl flex flex-col items-center">
