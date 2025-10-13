@@ -12,7 +12,7 @@ export default function Education() {
 
   return (
     <section className="w-full max-w-6xl min-h-screen bg-black flex justify-center items-center py-20">
-      <motion.div 
+      <motion.div
         ref={educationRef}
         initial={{ opacity: 0, y: 50 }}
         animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -20,15 +20,19 @@ export default function Education() {
         className="w-full flex flex-col lg:flex-row items-center justify-around "
       >
         {/* Left Side: Content */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
-          animate={educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          animate={
+            educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
+          }
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="flex-1 space-y-12 text-center lg:text-left"
         >
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
-            animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={
+              educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+            }
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="text-5xl md:text-6xl font-bold text-white"
           >
@@ -36,9 +40,11 @@ export default function Education() {
           </motion.h2>
 
           {/* Education Entry 1: University */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={
+              educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+            }
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
             className="space-y-2"
           >
@@ -50,9 +56,11 @@ export default function Education() {
           </motion.div>
 
           {/* Education Entry 2: School */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={
+              educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+            }
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
             className="space-y-2"
           >
@@ -67,27 +75,37 @@ export default function Education() {
         </motion.div>
 
         {/* Right Side: Image with Layered Effect */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
-          animate={educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          animate={
+            educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
+          }
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className=" flex justify-center lg:justify-start mt-10 lg:mt-0"
         >
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={educationInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            animate={
+              educationInView
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.9 }
+            }
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
             className="relative w-[280px] h-[420px] sm:w-[320px] sm:h-[480px]"
           >
             {/* The Image */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={educationInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+              animate={
+                educationInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.95 }
+              }
               transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
               className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl z-10"
             >
               <Image
-                src="/Education.png"
+                src="/Education1.png"
                 alt="A photo of the graduate in cap and gown"
                 fill
                 priority
@@ -96,9 +114,13 @@ export default function Education() {
             </motion.div>
 
             {/* The dark shape behind, offset from the image */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={educationInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              animate={
+                educationInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.9 }
+              }
               transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
               className="absolute top-[-3rem] right-[-4rem] w-[320px] bg-[#1C1C1C] h-[450px] rounded-lg z-0"
             ></motion.div>

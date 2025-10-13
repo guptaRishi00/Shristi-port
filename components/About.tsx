@@ -23,7 +23,7 @@ export default function About() {
     >
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start justify-center">
         {/* Left - Image with decorative rectangle and arrow */}
-        <motion.div 
+        <motion.div
           ref={imageRef}
           initial={{ opacity: 0, x: -50 }}
           animate={imageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -39,7 +39,7 @@ export default function About() {
 
           {/* Profile Image */}
           <Image
-            src="/Profilephoto.jpg"
+            src="/Profilephoto1.png"
             alt="Profile"
             width={384}
             height={384}
@@ -74,14 +74,14 @@ export default function About() {
         </motion.div>
 
         {/* Right - Text Content */}
-        <motion.div 
+        <motion.div
           ref={textRef}
           initial={{ opacity: 0, x: 50 }}
           animate={textInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center lg:text-left text-white space-y-6 lg:pl-8 "
         >
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -89,7 +89,7 @@ export default function About() {
           >
             About Me
           </motion.h2>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
