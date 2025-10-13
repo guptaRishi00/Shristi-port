@@ -9,8 +9,8 @@ const skills: string[][] = [
 
 const WhatIDo: FC = () => {
   return (
-    <section className="w-full bg-black flex flex-col items-center px-6 sm:px-12 lg:px-24 pt-26 pb-14 sm:pb-16 lg:pb-16">
-      {/* Top padding kept as pt-32 */}
+    <section className="w-full bg-black flex flex-col items-center px-6 sm:px-12 lg:px-24 pt-16 sm:pt-24 lg:pt-26 pb-10 sm:pb-16 lg:pb-16">
+      {/* Top padding: smaller on mobile, original for larger screens */}
       <div className="w-full max-w-7xl flex flex-col items-center">
         
         {/* Heading */}

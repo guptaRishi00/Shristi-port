@@ -5,14 +5,14 @@ export default function FeaturedProjects() {
   const projects = [
     {
       image: "/Frame1.png",
-      title: "BattleGator",
+      title: "BattinGator",
       description:
         "A clean, operable UI for esport and AI-hosted fights using card layouts, fluid indicators, and clear visual hierarchy to enhance readability and user engagement.",
       link: "#",
     },
     {
       image:
-        "/frame2.svg",
+        "/frame2.png",
       title: "Jia Organic Eco Resort",
       description:
         "Elegant sustainable aesthetics with clean layouts to reflect the resort's eco ethos, blending a nature environment on storytelling to highlight wellness and relaxation.",

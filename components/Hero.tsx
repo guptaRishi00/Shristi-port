@@ -18,10 +18,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-8 sm:px-12 lg:px-16 pt-32 sm:pt-40 lg:pt-48">
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-12 lg:px-16 pt-24 sm:pt-32 lg:pt-36">
         <div className="max-w-2xl text-left">
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 flex flex-col">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-5 flex flex-col">
             <span>Hi,</span>
 
             <span className="flex flex-wrap">
@@ -45,12 +45,12 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <h2 className="text-xl sm:text-2xl font-semibold text-white mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white mb-5">
             A UI/UX DESIGNER
           </h2>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 max-w-xl">
             I craft beautiful, user-centered digital experiences that solve real
             problems and delight users. Specializing in mobile apps, web
             platforms, and design systems.
