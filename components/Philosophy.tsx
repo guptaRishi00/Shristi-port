@@ -5,18 +5,18 @@ export default function Philosophy() {
 
   return (
     <section
-      className="w-full relative bg-center bg-cover min-h-screen flex items-center px-5 sm:px-10 lg:px-16"
+      className="w-full relative bg-center bg-cover py-12 sm:py-16 lg:py-20 flex items-center justify-center px-5 sm:px-10 lg:px-16"
       style={{ backgroundImage: `url(${backgroundImagePath})` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70 z-10"></div>
 
       {/* Content Container */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+      <div className="relative z-20 w-full max-w-8xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-14">
         
         {/* Left Side - Heading */}
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
             <span className="block lg:hidden">My Design Philosophy</span>
             <span className="hidden lg:block">
               <span className="block">My</span>
@@ -27,7 +27,7 @@ export default function Philosophy() {
         </div>
 
         {/* Right Side - Content */}
-        <div className="flex-1 space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed text-center lg:text-left max-w-xl lg:max-w-none">
+        <div className="flex-1 space-y-4 text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed text-center lg:text-left max-w-xl lg:max-w-none">
           <p>
             To me, design is about creating clarity out of complexity. It's not just about making things look good, but about making them work seamlessly so users feel confident and engaged without even realizing it.
           </p>
