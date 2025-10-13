@@ -1,13 +1,14 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { 
   ArrowLeft, Shield, Globe, Zap, Users, ArrowRight, PenTool, Layout, Moon, Layers 
-} from 'lucide-react';
+} from "lucide-react";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -28,50 +29,56 @@ export default function NewspacePortfolio() {
   const heroBackgroundImage = "/Project4.png"; // from public folder
 
   return (
-    <div className="bg-black text-white">
+    <motion.div
+      className="bg-black text-white"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative w-full min-h-[70vh]">
-  {heroBackgroundImage && (
-    <>
-      <Image
-        src={heroBackgroundImage}
-        alt="Hero background"
-        fill
-        className="object-cover"
-        priority
-      />
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
-    </>
-  )}
+        {heroBackgroundImage && (
+          <>
+            <Image
+              src={heroBackgroundImage}
+              alt="Hero background"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+          </>
+        )}
 
-  <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-24 sm:pt-32 flex flex-col">
-    <Link href="/#projects" scroll={true}>
-      <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6">
-        <ArrowLeft className="w-4 h-4" />
-        <span>Back To Projects</span>
-      </button>
-    </Link>
+        <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-24 sm:pt-32 flex flex-col">
+          <Link href="/#projects" scroll={true}>
+            <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6">
+              <ArrowLeft className="w-4 h-4" />
+              <span>Back To Projects</span>
+            </button>
+          </Link>
 
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-      Newspace Research & Technologies
-    </h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            Newspace Research & Technologies
+          </h1>
 
-    <div className="flex items-center gap-2 mb-4">
-      <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-500" />
-      <span className="text-yellow-500 font-medium text-sm sm:text-base">
-        NDA Protected
-      </span>
-    </div>
+          <div className="flex items-center gap-2 mb-4">
+            <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-500" />
+            <span className="text-yellow-500 font-medium text-sm sm:text-base">
+              NDA Protected
+            </span>
+          </div>
 
-    <p className="text-gray-400 text-sm sm:text-lg max-w-2xl leading-relaxed">
-      (Due to NDA restrictions, I cannot share detailed visuals of this work.<br />
-      Here&apos;s an overview of my role and contributions.)
-    </p>
-  </div>
-</section>
+          <p className="text-gray-400 text-sm sm:text-lg max-w-2xl leading-relaxed">
+            (Due to NDA restrictions, I cannot share detailed visuals of this work.<br />
+            Here&apos;s an overview of my role and contributions.)
+          </p>
+        </div>
+      </section>
 
       {/* Project Overview */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -117,33 +124,28 @@ export default function NewspacePortfolio() {
         </div>
       </section>
 
-     {/* The Challenge */}
-<section className="max-w-7xl mx-auto px-6 sm:px-10 py-10">
-  <div className="grid md:grid-cols-2 gap-12 items-center">
-    {/* Heading */}
-    <div className="flex items-center justify-center">
-      <h2 className="text-4xl font-bold text-center">
-        The Challenge
-      </h2>
-    </div>
+      {/* The Challenge */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 py-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Heading */}
+          <div className="flex items-center justify-center">
+            <h2 className="text-4xl font-bold text-center">The Challenge</h2>
+          </div>
 
-    {/* Right Gray Box */}
-    <div className="bg-white/10 border border-gray-500 rounded-lg p-10 max-w-lg mx-auto h-full">
-      <p className="text-gray-200 leading-relaxed">
-        Designing for aerospace and defence meant working in mission-critical environments where interfaces needed to be clear, reliable, and efficient. The challenge was to simplify complex data systems while ensuring accuracy, usability, and trust for operators and engineers.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-
+          {/* Right Gray Box */}
+          <div className="bg-white/10 border border-gray-500 rounded-lg p-10 max-w-lg mx-auto h-full">
+            <p className="text-gray-200 leading-relaxed">
+              Designing for aerospace and defence meant working in mission-critical environments where interfaces needed to be clear, reliable, and efficient. The challenge was to simplify complex data systems while ensuring accuracy, usability, and trust for operators and engineers.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* My Contributions */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <h2 className="text-4xl font-bold mb-12 text-center">My Contributions</h2>
         <div className="grid md:grid-cols-2 gap-8">
+          {/* Contribution cards */}
           <div className="p-8">
             <div className="flex items-start gap-4">
               <ArrowRight className="w-6 h-6 text-white flex-shrink-0 mt-1" />
@@ -266,6 +268,6 @@ export default function NewspacePortfolio() {
 
       {/* Footer */}
       <Footer />
-    </div>
+    </motion.div>
   );
 }

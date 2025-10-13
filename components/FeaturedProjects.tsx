@@ -12,7 +12,7 @@ export default function FeaturedProjects() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&fit=crop",
+        "/frame2.svg",
       title: "Jia Organic Eco Resort",
       description:
         "Elegant sustainable aesthetics with clean layouts to reflect the resort's eco ethos, blending a nature environment on storytelling to highlight wellness and relaxation.",
@@ -35,7 +35,7 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section id="projects" className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 py-12">
+    <section id="projects" className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 pt-6 pb-12">
       <div className="w-full max-w-7xl flex flex-col items-center">
         
         {/* Heading */}
