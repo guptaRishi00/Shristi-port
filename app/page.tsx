@@ -32,7 +32,7 @@ export default function Home() {
 
       {/* Main Content Sections - Centered with Equal Padding */}
       <div className="flex flex-col items-center ">
-        <div className="w-full max-w-7xl px-5 sm:px-10 py-12 flex flex-col items-center space-y-12">
+        <div className="w-full max-w-7xl px-5 sm:px-10 flex flex-col items-center">
           <About />
           <WhatIDo />
           <FeaturedProjects />

@@ -18,7 +18,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full  bg-black flex h-screen flex-col items-center px-5 sm:px-10 py-12 sm:py-12 lg:py-12 pb-8 sm:pb-12"
+      className="w-full  bg-black flex h-screen flex-col items-center px-5 sm:px-10 py-12 sm:py-12 lg:pt-12 pb-8 sm:pb-0"
       // pb-8 applied for mobile, sm:pb-12 keeps original for larger screens
     >
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start justify-center">

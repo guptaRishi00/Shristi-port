@@ -22,9 +22,9 @@ const WhatIDo: FC = () => {
   });
 
   return (
-    <section className="w-full h-screen bg-black flex flex-col items-center px-6 sm:px-12 lg:px-0 max-w-7xl pt-16 sm:pt-24 lg:pt-26 pb-10 sm:pb-16 lg:pb-16">
+    <section className="w-full h-screen lg:-mt-10 bg-black flex flex-col items-center px-6 sm:px-12 lg:px-0 max-w-7xl sm:pb-16 lg:pb-16">
       {/* Top padding: smaller on mobile, original for larger screens */}
-      <motion.div 
+      <motion.div
         ref={whatIDoRef}
         initial={{ opacity: 0, y: 50 }}
         animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -32,7 +32,7 @@ const WhatIDo: FC = () => {
         className="w-full flex flex-col items-center gap-20"
       >
         {/* Heading */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -42,7 +42,7 @@ const WhatIDo: FC = () => {
         </motion.h2>
 
         {/* Description */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -56,7 +56,7 @@ const WhatIDo: FC = () => {
         </motion.p>
 
         {/* Skills Tags */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
@@ -66,11 +66,13 @@ const WhatIDo: FC = () => {
             <motion.div
               key={rowIndex}
               initial={{ opacity: 0, y: 20 }}
-              animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ 
-                duration: 0.5, 
-                delay: 0.8 + (rowIndex * 0.1), 
-                ease: "easeOut" 
+              animate={
+                whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              transition={{
+                duration: 0.5,
+                delay: 0.8 + rowIndex * 0.1,
+                ease: "easeOut",
               }}
               className="flex flex-wrap justify-center gap-3 sm:gap-4"
             >
@@ -78,11 +80,15 @@ const WhatIDo: FC = () => {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={whatIDoInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ 
-                    duration: 0.4, 
-                    delay: 1.0 + (rowIndex * 0.1) + (index * 0.05), 
-                    ease: "easeOut" 
+                  animate={
+                    whatIDoInView
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 0, scale: 0.8 }
+                  }
+                  transition={{
+                    duration: 0.4,
+                    delay: 1.0 + rowIndex * 0.1 + index * 0.05,
+                    ease: "easeOut",
                   }}
                   className="px-6 py-3 border border-white rounded-2xl text-white 
                              text-sm sm:text-lg font-medium bg-[#1E1E1EDE] hover:bg-black cursor-pointer transition-colors duration-300"
