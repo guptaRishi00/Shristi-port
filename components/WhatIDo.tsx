@@ -22,14 +22,14 @@ const WhatIDo: FC = () => {
   });
 
   return (
-    <section className="w-full h-screen lg:-mt-10 bg-black flex flex-col items-center px-6 sm:px-12 lg:px-0 max-w-7xl sm:pb-16 lg:pb-16">
+    <section className="w-full h-screen mt-50 lg:mt-10 bg-black flex flex-col items-center px-6 sm:px-12 lg:px-0 max-w-7xl sm:pb-16 lg:pb-16">
       {/* Top padding: smaller on mobile, original for larger screens */}
       <motion.div
         ref={whatIDoRef}
         initial={{ opacity: 0, y: 50 }}
         animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full flex flex-col items-center gap-20"
+        className="w-full flex flex-col items-center gap-10"
       >
         {/* Heading */}
         <motion.h2

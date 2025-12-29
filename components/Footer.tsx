@@ -5,7 +5,8 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative w-full px-6 sm:px-12 lg:p-20 bg-center bg-cover"
+      // Added py-16 to ensure top/bottom spacing on mobile
+      className="relative w-full px-6 py-16 sm:px-12 lg:p-20 bg-center bg-cover"
       style={{
         backgroundImage: `url(${backgroundImagePath})`,
       }}
@@ -13,10 +14,11 @@ export default function Footer() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70 z-10"></div>
 
-      <div className="relative z-20 max-w-7xl mx-auto flex flex-col gap-10">
+      <div className="relative z-20 max-w-7xl mx-auto flex flex-col gap-12 lg:gap-16">
         {/* Heading Section */}
         <div className="text-center space-y-4">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+          {/* Adjusted text size: 3xl mobile -> 5xl tablet -> 6xl desktop */}
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white">
             Let’s Connect!
           </h2>
           <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
@@ -27,7 +29,7 @@ export default function Footer() {
         </div>
 
         {/* Links & Contact Info */}
-        <div className="flex flex-col md:flex-row justify-between gap-10">
+        <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-8">
           {/* Quick Links */}
           <div className="flex-1">
             <h3 className="text-white text-xl font-semibold mb-4">
@@ -68,7 +70,9 @@ export default function Footer() {
 
               {/* Phone */}
               <div className="flex items-center gap-3 text-gray-300">
+                {/* Added shrink-0 to prevent icon squishing */}
                 <svg
+                  className="shrink-0"
                   width="16"
                   height="16"
                   viewBox="0 0 20 20"
@@ -88,6 +92,7 @@ export default function Footer() {
               {/* Email */}
               <div className="flex items-center gap-3 text-gray-300">
                 <svg
+                  className="shrink-0"
                   width="16"
                   height="18"
                   viewBox="0 0 24 18"
@@ -99,13 +104,15 @@ export default function Footer() {
                     fill="white"
                   />
                 </svg>
-                <span>shristimittal026@gmail.com</span>
+                {/* break-all ensures long emails don't break layout on tiny screens */}
+                <span className="break-all">shristimittal026@gmail.com</span>
               </div>
 
               {/* Social Links */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 text-gray-300">
-                <span className="font-medium mb-1 sm:mb-0">Follow</span>
-                <div className="flex gap-3 flex-wrap justify-center sm:justify-start">
+              {/* Changed layout to row on all screens for cleaner alignment */}
+              <div className="flex flex-row items-center gap-3 text-gray-300">
+                <span className="font-medium">Follow</span>
+                <div className="flex gap-3 flex-wrap">
                   {/* LinkedIn */}
                   <a
                     href="https://linkedin.com"

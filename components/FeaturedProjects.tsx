@@ -23,14 +23,14 @@ export default function FeaturedProjects() {
       title: "Jia Organic Eco Resort",
       description:
         "Elegant sustainable aesthetics with clean layouts to reflect the resort's eco ethos, blending a nature environment on storytelling to highlight wellness and relaxation.",
-      link: "#",
+      link: "https://www.jiaorganicecoresort.com/",
     },
     {
       image: "/Frame3.png",
       title: "Bloomvest",
       description:
         "Simplified complex financial services into an intuitive, credibility-focused experience. Used data visualization techniques for CA to improve user understanding and trust.",
-      link: "#",
+      link: "https://www.bloomvest.io/",
     },
     {
       image: "/Frame4.png",
@@ -39,14 +39,28 @@ export default function FeaturedProjects() {
         "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
       link: "/Projects/Newspace",
     },
+    {
+      image: "/socleh.png",
+      title: "Socle RH",
+      description:
+        "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
+      link: "https://www.soclerh.fr/fr",
+    },
+    {
+      image: "/neurolinq.png",
+      title: "NeuroLinq",
+      description:
+        "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
+      link: "https://neurolinq-2.vercel.app/",
+    },
   ];
 
   return (
     <section
       id="projects"
-      className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-0 pt-6 pb-12 "
+      className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-0 mt-100 lg:-mt-10 pb-20"
     >
-      <motion.div 
+      <motion.div
         ref={projectsRef}
         initial={{ opacity: 0, y: 50 }}
         animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -54,9 +68,11 @@ export default function FeaturedProjects() {
         className="w-full flex flex-col items-center"
       >
         {/* Heading */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={
+            projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+          }
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center mb-16"
         >
@@ -64,9 +80,11 @@ export default function FeaturedProjects() {
         </motion.h2>
 
         {/* Projects Grid */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={
+            projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+          }
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 w-full"
         >
@@ -74,13 +92,17 @@ export default function FeaturedProjects() {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              animate={projectsInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: 0.6 + (index * 0.1), 
-                ease: "easeOut" 
+              animate={
+                projectsInView
+                  ? { opacity: 1, y: 0, scale: 1 }
+                  : { opacity: 0, y: 30, scale: 0.95 }
+              }
+              transition={{
+                duration: 0.6,
+                delay: 0.6 + index * 0.1,
+                ease: "easeOut",
               }}
-              className="bg-transparent border border-white/20 rounded-2xl overflow-hidden hover:border-white/40 transition-all duration-300 group"
+              className="bg-transparent border border-white/20 rounded-3xl overflow-hidden hover:border-white/40 transition-all duration-300 group"
             >
               {/* Project Image */}
               <div className="relative aspect-video overflow-hidden bg-black rounded-t-2xl">

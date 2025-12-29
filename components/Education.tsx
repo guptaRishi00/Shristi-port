@@ -11,13 +11,15 @@ export default function Education() {
   });
 
   return (
-    <section className="w-full max-w-6xl min-h-screen bg-black flex justify-center items-center py-20">
+    // Added px-6 for mobile side padding so content doesn't hit the edge
+    <section className="w-full max-w-6xl min-h-screen bg-black flex justify-center items-center py-20 px-6 sm:px-10">
       <motion.div
         ref={educationRef}
         initial={{ opacity: 0, y: 50 }}
         animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full flex flex-col lg:flex-row items-center justify-around "
+        // Added gap-16 to create space between text and image when stacked on mobile
+        className="w-full flex flex-col lg:flex-row items-center justify-around gap-16 lg:gap-0"
       >
         {/* Left Side: Content */}
         <motion.div
@@ -34,7 +36,8 @@ export default function Education() {
               educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
             }
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="text-5xl md:text-6xl font-bold text-white"
+            // Adjusted text size: 4xl on mobile, 6xl on medium/large screens
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white"
           >
             Education
           </motion.h2>
@@ -81,7 +84,8 @@ export default function Education() {
             educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
           }
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className=" flex justify-center lg:justify-start mt-10 lg:mt-0"
+          // Removed manual mt-10, relying on the parent 'gap-16' for cleaner spacing
+          className="flex justify-center lg:justify-start"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -91,6 +95,7 @@ export default function Education() {
                 : { opacity: 0, scale: 0.9 }
             }
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            // Sizing remains the same, but flex-col in parent ensures it fits
             className="relative w-[280px] h-[420px] sm:w-[320px] sm:h-[480px]"
           >
             {/* The Image */}
@@ -113,7 +118,10 @@ export default function Education() {
               />
             </motion.div>
 
-            {/* The dark shape behind, offset from the image */}
+            {/* The dark shape behind */}
+            {/* RESPONSIVE FIX: Changed right/top values. 
+                On mobile, the offset is smaller (-1.5rem) to prevent overflow. 
+                On lg screens, it returns to your original -4rem. */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={
@@ -122,7 +130,7 @@ export default function Education() {
                   : { opacity: 0, scale: 0.9 }
               }
               transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
-              className="absolute top-[-3rem] right-[-4rem] w-[320px] bg-[#1C1C1C] h-[450px] rounded-lg z-0"
+              className="absolute top-[-1.5rem] right-[-1.5rem] lg:top-[-3rem] lg:right-[-4rem] w-[320px] bg-[#1C1C1C] h-[450px] rounded-lg z-0"
             ></motion.div>
           </motion.div>
         </motion.div>
