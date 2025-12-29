@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -58,7 +59,6 @@ export default function FeaturedProjects() {
   return (
     <section
       id="projects"
-      // Standardized spacing
       className="w-full bg-black py-16 sm:py-20 px-6 sm:px-10 lg:px-16 flex justify-center"
     >
       <motion.div
@@ -105,44 +105,51 @@ export default function FeaturedProjects() {
               }}
               className="bg-transparent border border-white/20 rounded-3xl overflow-hidden hover:border-white/40 transition-all duration-300 group"
             >
-              <div className="relative aspect-video overflow-hidden bg-black rounded-t-2xl">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                />
-              </div>
-
-              <div className="p-6 sm:p-6">
-                <div className="flex items-start justify-between mb-8">
-                  <h3 className="text-xl font-bold text-white">
-                    {project.title}
-                  </h3>
-                  <a
-                    href={project.link}
-                    className="text-white hover:text-gray-300 transition-colors flex-shrink-0"
-                    aria-label="View project"
-                  >
-                    <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
+              {/* Added target="_blank" to open in new tab (if link is not #) */}
+              <Link
+                href={project.link}
+                className="block w-full h-full"
+                target={project.link !== "#" ? "_blank" : undefined}
+                rel={project.link !== "#" ? "noopener noreferrer" : undefined}
+              >
+                <div className="relative aspect-video overflow-hidden bg-black rounded-t-2xl">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                  />
                 </div>
-                <p className="text-gray-400 text-sm sm:text-xl leading-relaxed break-words">
-                  {project.description}
-                </p>
-              </div>
+
+                <div className="p-6 sm:p-6">
+                  <div className="flex items-start justify-between mb-8">
+                    <h3 className="text-xl font-bold text-white">
+                      {project.title}
+                    </h3>
+                    <div
+                      className="text-white group-hover:text-gray-300 transition-colors flex-shrink-0"
+                      aria-label="View project"
+                    >
+                      <svg
+                        className="w-5 h-5 sm:w-6 sm:h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <p className="text-gray-400 text-sm sm:text-xl leading-relaxed break-words">
+                    {project.description}
+                  </p>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
