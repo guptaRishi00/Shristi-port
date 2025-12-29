@@ -176,16 +176,16 @@ const DesignProcess: FC = () => {
   });
 
   return (
-    <section className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-16 pt-8 pb-12">
-      <motion.div 
+    // Standardized spacing
+    <section className="w-full bg-black py-16 sm:py-20 px-6 sm:px-10 lg:px-16 flex justify-center">
+      <motion.div
         ref={processRef}
         initial={{ opacity: 0, y: 50 }}
         animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full  flex flex-col items-center"
+        className="w-full max-w-7xl flex flex-col items-center"
       >
-        {/* Heading */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -194,8 +194,7 @@ const DesignProcess: FC = () => {
           My Design Process
         </motion.h2>
 
-        {/* Process Cards Grid */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -205,89 +204,128 @@ const DesignProcess: FC = () => {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              animate={processInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: 0.6 + (index * 0.1), 
-                ease: "easeOut" 
+              animate={
+                processInView
+                  ? { opacity: 1, y: 0, scale: 1 }
+                  : { opacity: 0, y: 30, scale: 0.95 }
+              }
+              transition={{
+                duration: 0.6,
+                delay: 0.6 + index * 0.1,
+                ease: "easeOut",
               }}
-              whileHover={{ 
-                scale: 1.02, 
+              whileHover={{
+                scale: 1.02,
                 y: -5,
-                transition: { duration: 0.3, ease: "easeOut" }
+                transition: { duration: 0.3, ease: "easeOut" },
               }}
               className="bg-transparent border rounded-4xl p-6 border-[#FFFFFF66] transition-colors duration-300 cursor-pointer"
             >
-              {/* Icon and Title */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
-                animate={processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
+                animate={
+                  processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                }
+                transition={{
+                  duration: 0.5,
+                  delay: 0.8 + index * 0.1,
+                  ease: "easeOut",
+                }}
                 className="flex items-center gap-3 mb-4"
               >
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, rotate: -180, scale: 0.5 }}
-                  animate={processInView ? { opacity: 1, rotate: 0, scale: 1 } : { opacity: 0, rotate: -180, scale: 0.5 }}
-                  transition={{ duration: 0.6, delay: 0.9 + (index * 0.1), ease: "easeOut" }}
-                  whileHover={{ 
-                    rotate: 360, 
+                  animate={
+                    processInView
+                      ? { opacity: 1, rotate: 0, scale: 1 }
+                      : { opacity: 0, rotate: -180, scale: 0.5 }
+                  }
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.9 + index * 0.1,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{
+                    rotate: 360,
                     scale: 1.1,
-                    transition: { duration: 0.4, ease: "easeInOut" }
+                    transition: { duration: 0.4, ease: "easeInOut" },
                   }}
                   className="text-white"
                 >
                   {step.icon}
                 </motion.div>
-                <motion.h3 
+                <motion.h3
                   initial={{ opacity: 0, x: 20 }}
-                  animate={processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                  transition={{ duration: 0.5, delay: 1.0 + (index * 0.1), ease: "easeOut" }}
+                  animate={
+                    processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }
+                  }
+                  transition={{
+                    duration: 0.5,
+                    delay: 1.0 + index * 0.1,
+                    ease: "easeOut",
+                  }}
                   className="text-xl font-bold text-white min-w-0"
                 >
                   {step.title}
                 </motion.h3>
               </motion.div>
 
-              {/* Description */}
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
-                animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: 1.1 + (index * 0.1), ease: "easeOut" }}
+                animate={
+                  processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{
+                  duration: 0.5,
+                  delay: 1.1 + index * 0.1,
+                  ease: "easeOut",
+                }}
                 className="text-gray-400 text-sm sm:text-base mb-4 leading-relaxed"
               >
                 {step.description}
               </motion.p>
 
-              {/* Items List */}
-              <motion.ul 
+              <motion.ul
                 initial={{ opacity: 0 }}
                 animate={processInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.3, delay: 1.2 + (index * 0.1), ease: "easeOut" }}
+                transition={{
+                  duration: 0.3,
+                  delay: 1.2 + index * 0.1,
+                  ease: "easeOut",
+                }}
                 className="space-y-2"
               >
                 {step.items.map((item, itemIndex) => (
                   <motion.li
                     key={itemIndex}
                     initial={{ opacity: 0, x: -10 }}
-                    animate={processInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
-                    transition={{ 
-                      duration: 0.4, 
-                      delay: 1.3 + (index * 0.1) + (itemIndex * 0.05), 
-                      ease: "easeOut" 
+                    animate={
+                      processInView
+                        ? { opacity: 1, x: 0 }
+                        : { opacity: 0, x: -10 }
+                    }
+                    transition={{
+                      duration: 0.4,
+                      delay: 1.3 + index * 0.1 + itemIndex * 0.05,
+                      ease: "easeOut",
                     }}
-                    whileHover={{ 
+                    whileHover={{
                       x: 5,
-                      transition: { duration: 0.2, ease: "easeOut" }
+                      transition: { duration: 0.2, ease: "easeOut" },
                     }}
                     className="text-gray-300 text-sm sm:text-base flex items-start"
                   >
-                    <motion.span 
+                    <motion.span
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={processInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                      transition={{ 
-                        duration: 0.3, 
-                        delay: 1.4 + (index * 0.1) + (itemIndex * 0.05), 
-                        ease: "easeOut" 
+                      animate={
+                        processInView
+                          ? { opacity: 1, scale: 1 }
+                          : { opacity: 0, scale: 0 }
+                      }
+                      transition={{
+                        duration: 0.3,
+                        delay: 1.4 + index * 0.1 + itemIndex * 0.05,
+                        ease: "easeOut",
                       }}
                       className="text-white mr-2"
                     >

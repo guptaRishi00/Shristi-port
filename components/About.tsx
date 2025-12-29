@@ -18,23 +18,23 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full  bg-black flex h-screen flex-col items-center px-5 sm:px-10 py-12 sm:py-12 lg:pt-12 pb-8 sm:pb-0"
-      // pb-8 applied for mobile, sm:pb-12 keeps original for larger screens
+      // Standardized spacing: py-16 mobile, py-20 desktop. Auto height.
+      className="w-full bg-black py-16 sm:py-20 px-6 sm:px-10 lg:px-16"
     >
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start justify-center">
-        {/* Left - Image with decorative rectangle and arrow */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start justify-center">
+        {/* Left - Image */}
         <motion.div
           ref={imageRef}
           initial={{ opacity: 0, x: -50 }}
           animate={imageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative flex justify-center items-center mb-10 lg:mb-0 lg:pr-8 "
+          className="relative flex justify-center items-center mb-10 lg:mb-0 lg:pr-8"
         >
-          {/* Decorative Rectangle - Behind Image */}
+          {/* Decorative Rectangle */}
           <div
             className="absolute bg-[#1E1E1EDE] rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.4)] z-0
                        w-48 h-64 xs:w-56 xs:h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 lg:w-72 lg:h-[30rem]
-                       top-6 sm:top-8 md:top-10 lg:top-16 left-0 xs:left-0 sm:left-0 md:left-0 lg:left-0"
+                       top-6 sm:top-8 md:top-10 lg:top-16 left-0"
           ></div>
 
           {/* Profile Image */}
@@ -48,28 +48,24 @@ export default function About() {
             priority
           />
 
-          {/* Decorative Lines - Bottom Left of Image */}
+          {/* Decorative Lines */}
           <Image
             src="/decorativelines.svg"
             alt="Decorative Lines"
             width={100}
             height={100}
-            className="absolute z-20
-                       w-20 h-20 sm:w-24 sm:h-24 lg:w-46 lg:h-46
+            className="absolute z-20 w-20 h-20 sm:w-24 sm:h-24 lg:w-46 lg:h-46
                        bottom-2 sm:bottom-4 lg:-bottom-16 left-0 sm:left-2 lg:-left-8"
           />
 
-          {/* Connecting Line - Arrow (SVG) */}
+          {/* Arrow */}
           <Image
             src="/arrow.svg"
             alt="Connecting Line"
-            width={200}
+            width={300}
             height={100}
             className="absolute hidden lg:block"
-            style={{
-              right: "-80px",
-              top: "45%",
-            }}
+            style={{ right: "-80px", top: "45%" }}
           />
         </motion.div>
 
@@ -79,7 +75,7 @@ export default function About() {
           initial={{ opacity: 0, x: 50 }}
           animate={textInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center lg:text-left text-white space-y-6 lg:pl-8 "
+          className="text-center lg:text-left text-white space-y-6 lg:pl-8"
         >
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -105,8 +101,8 @@ export default function About() {
             </p>
             <p className="text-sm sm:text-base md:text-xl text-light leading-relaxed">
               I believe good design is equal parts empathy and structure — and
-              I'm always looking to build things that are not only usable, but
-              genuinely helpful.
+              I&apos;m always looking to build things that are not only usable,
+              but genuinely helpful.
             </p>
           </motion.div>
         </motion.div>

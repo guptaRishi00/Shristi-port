@@ -11,15 +11,14 @@ export default function Education() {
   });
 
   return (
-    // Added px-6 for mobile side padding so content doesn't hit the edge
-    <section className="w-full max-w-6xl min-h-screen bg-black flex justify-center items-center py-20 px-6 sm:px-10">
+    // Standardized spacing
+    <section className="w-full bg-black py-16 sm:py-20 px-6 sm:px-10 lg:px-16 flex justify-center">
       <motion.div
         ref={educationRef}
         initial={{ opacity: 0, y: 50 }}
         animate={educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        // Added gap-16 to create space between text and image when stacked on mobile
-        className="w-full flex flex-col lg:flex-row items-center justify-around gap-16 lg:gap-0"
+        className="w-full max-w-6xl flex flex-col lg:flex-row items-center justify-around gap-16 lg:gap-0"
       >
         {/* Left Side: Content */}
         <motion.div
@@ -36,13 +35,11 @@ export default function Education() {
               educationInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
             }
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            // Adjusted text size: 4xl on mobile, 6xl on medium/large screens
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white"
           >
             Education
           </motion.h2>
 
-          {/* Education Entry 1: University */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={
@@ -58,7 +55,6 @@ export default function Education() {
             </p>
           </motion.div>
 
-          {/* Education Entry 2: School */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={
@@ -77,14 +73,13 @@ export default function Education() {
           </motion.div>
         </motion.div>
 
-        {/* Right Side: Image with Layered Effect */}
+        {/* Right Side: Image */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={
             educationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
           }
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          // Removed manual mt-10, relying on the parent 'gap-16' for cleaner spacing
           className="flex justify-center lg:justify-start"
         >
           <motion.div
@@ -95,10 +90,8 @@ export default function Education() {
                 : { opacity: 0, scale: 0.9 }
             }
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            // Sizing remains the same, but flex-col in parent ensures it fits
             className="relative w-[280px] h-[420px] sm:w-[320px] sm:h-[480px]"
           >
-            {/* The Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={
@@ -118,10 +111,6 @@ export default function Education() {
               />
             </motion.div>
 
-            {/* The dark shape behind */}
-            {/* RESPONSIVE FIX: Changed right/top values. 
-                On mobile, the offset is smaller (-1.5rem) to prevent overflow. 
-                On lg screens, it returns to your original -4rem. */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={

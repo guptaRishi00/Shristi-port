@@ -3,14 +3,9 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+// Removed the duplicate "UI/UX Design" from the first row
 const skills: string[][] = [
-  [
-    "UI/UX Design",
-    "User Research",
-    "UI/UX Design",
-    "Design Thinking",
-    "Prototyping",
-  ],
+  ["UI/UX Design", "User Research", "Design Thinking", "Prototyping"],
   ["Design Systems", "User-Centric Design", "UX Strategy", "Product Design"],
   ["Usability Testing", "Collaboration"],
 ];
@@ -22,14 +17,14 @@ const WhatIDo: FC = () => {
   });
 
   return (
-    <section className="w-full h-screen mt-50 lg:mt-10 bg-black flex flex-col items-center px-6 sm:px-12 lg:px-0 max-w-7xl sm:pb-16 lg:pb-16">
-      {/* Top padding: smaller on mobile, original for larger screens */}
+    // Applied consistent spacing: py-16 (mobile) to py-20 (desktop)
+    <section className="w-full bg-black py-16 sm:py-20 px-6 sm:px-10 lg:px-16 flex justify-center">
       <motion.div
         ref={whatIDoRef}
         initial={{ opacity: 0, y: 50 }}
         animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full flex flex-col items-center gap-10"
+        className="w-full max-w-7xl flex flex-col items-center gap-10"
       >
         {/* Heading */}
         <motion.h2
@@ -60,7 +55,7 @@ const WhatIDo: FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={whatIDoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col space-y-4 w-full max-w-7xl"
+          className="flex flex-col space-y-4 w-full"
         >
           {skills.map((row, rowIndex) => (
             <motion.div

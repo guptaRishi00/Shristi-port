@@ -58,14 +58,15 @@ export default function FeaturedProjects() {
   return (
     <section
       id="projects"
-      className="w-full bg-black flex flex-col items-center px-5 sm:px-10 lg:px-0 mt-100 lg:-mt-10 pb-20"
+      // Standardized spacing
+      className="w-full bg-black py-16 sm:py-20 px-6 sm:px-10 lg:px-16 flex justify-center"
     >
       <motion.div
         ref={projectsRef}
         initial={{ opacity: 0, y: 50 }}
         animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full flex flex-col items-center"
+        className="w-full max-w-7xl flex flex-col items-center"
       >
         {/* Heading */}
         <motion.h2
@@ -104,17 +105,15 @@ export default function FeaturedProjects() {
               }}
               className="bg-transparent border border-white/20 rounded-3xl overflow-hidden hover:border-white/40 transition-all duration-300 group"
             >
-              {/* Project Image */}
               <div className="relative aspect-video overflow-hidden bg-black rounded-t-2xl">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover  group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
               </div>
 
-              {/* Project Content */}
               <div className="p-6 sm:p-6">
                 <div className="flex items-start justify-between mb-8">
                   <h3 className="text-xl font-bold text-white">
