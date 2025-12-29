@@ -86,7 +86,7 @@ const WhatIDo: FC = () => {
                     ease: "easeOut",
                   }}
                   className="px-6 py-3 border border-white rounded-2xl text-white 
-                             text-sm sm:text-lg font-medium bg-[#1E1E1EDE] hover:bg-black cursor-pointer transition-colors duration-300"
+                             text-sm sm:text-lg font-medium bg-[#1E1E1EDE] hover:bg-white hover:text-black cursor-pointer transition-colors duration-300"
                 >
                   {skill}
                 </motion.div>
