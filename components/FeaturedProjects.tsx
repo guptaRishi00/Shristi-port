@@ -12,6 +12,20 @@ export default function FeaturedProjects() {
 
   const projects = [
     {
+      image: "/socleh2.png",
+      title: "Socle RH",
+      description:
+        "Built a polished HR site that reinforces expertise through intuitive UX and a confident visual system.",
+      link: "https://www.soclerh.fr/fr",
+    },
+    {
+      image: "/neurolinq2.png",
+      title: "NeuroLinq",
+      description:
+        "Seamlessly connects individuals with nurse-led ADHD assessments and workplace support via an accessible UI that instills professional trust.",
+      link: "https://neurolinq-2.vercel.app/",
+    },
+    {
       image: "/betting.png",
       title: "BettinGator",
       description:
@@ -38,20 +52,6 @@ export default function FeaturedProjects() {
       description:
         "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
       link: "/Projects/Newspace",
-    },
-    {
-      image: "/socleh.png",
-      title: "Socle RH",
-      description:
-        "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
-      link: "https://www.soclerh.fr/fr",
-    },
-    {
-      image: "/neurolinq.png",
-      title: "NeuroLinq",
-      description:
-        "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
-      link: "https://neurolinq-2.vercel.app/",
     },
   ];
 
