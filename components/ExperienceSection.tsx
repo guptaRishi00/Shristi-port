@@ -41,7 +41,10 @@ const experiences: ExperienceItem[] = [
 const ExperienceSection: React.FC = () => {
   return (
     // Standardized spacing
-    <section className="w-full bg-[#0a0a0a] py-16 sm:py-20 px-6 sm:px-10 lg:px-16">
+    <section
+      id="experience"
+      className="w-full bg-[#0a0a0a] py-16 sm:py-20 px-6 sm:px-10 lg:px-16"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
           Experience

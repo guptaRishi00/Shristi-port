@@ -24,7 +24,8 @@ const Navbar: React.FC = () => {
         scrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8 sm:px-10 py-10 flex justify-between  items-center w-full">
+      {/* Standardized horizontal spacing: px-6 sm:px-10 lg:px-16 */}
+      <div className="mx-auto px-6 sm:px-10 lg:px-16 py-10 flex justify-between items-center w-full">
         {/* Left side empty */}
         <div className="w-1/3"></div>
 
@@ -41,6 +42,12 @@ const Navbar: React.FC = () => {
             className="text-white hover:text-gray-300 transition font-semibold text-lg cursor-pointer"
           >
             Projects
+          </button>
+          <button
+            onClick={() => handleScrollTo("experience")}
+            className="text-white hover:text-gray-300 transition font-semibold text-lg cursor-pointer"
+          >
+            Experience
           </button>
           <button
             onClick={() => handleScrollTo("contact")}
