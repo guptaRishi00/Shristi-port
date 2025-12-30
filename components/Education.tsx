@@ -119,7 +119,7 @@ export default function Education() {
                   : { opacity: 0, scale: 0.9 }
               }
               transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
-              className="absolute top-[-1.5rem] right-[-1.5rem] lg:top-[-3rem] lg:right-[-4rem] w-[320px] bg-[#1C1C1C] h-[450px] rounded-lg z-0"
+              className="hidden lg:inline-block lg:absolute top-[-1.5rem] right-[-1.5rem] lg:top-[-3rem] lg:right-[-4rem] w-[320px] bg-[#1C1C1C] h-[450px] rounded-lg z-0"
             ></motion.div>
           </motion.div>
         </motion.div>

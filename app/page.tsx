@@ -14,24 +14,29 @@ import ExperienceSection from "@/components/ExperienceSection";
 
 export default function Home() {
   return (
-    <motion.main
-      className="relative bg-black flex flex-col overflow-x-hidden"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <>
+      {/* Navbar moved OUTSIDE motion.main to prevent fixed positioning issues */}
       <Navbar />
 
-      <Hero />
-      <About />
-      <WhatIDo />
-      <FeaturedProjects />
-      <ExperienceSection />
-      <Philosophy />
-      <Education />
-      <DesignProcess />
-      <Footer />
-    </motion.main>
+      <motion.main
+        className="relative bg-black flex flex-col items-center overflow-x-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        {/* Navbar wrapper removed here */}
+
+        <Hero />
+        <About />
+        <WhatIDo />
+        <FeaturedProjects />
+        <ExperienceSection />
+        <Philosophy />
+        <Education />
+        <DesignProcess />
+        <Footer />
+      </motion.main>
+    </>
   );
 }
