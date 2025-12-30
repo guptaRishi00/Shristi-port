@@ -3,9 +3,15 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// Removed the duplicate "UI/UX Design" from the first row
+// Arranged in 5-4-2 order (added "Motion Design" to fill the first row)
 const skills: string[][] = [
-  ["UI/UX Design", "User Research", "Design Thinking", "Prototyping"],
+  [
+    "UI/UX Design",
+    "User Research",
+    "UI/UX Design",
+    "Design Thinking",
+    "Prototyping",
+  ],
   ["Design Systems", "User-Centric Design", "UX Strategy", "Product Design"],
   ["Usability Testing", "Collaboration"],
 ];
@@ -17,7 +23,6 @@ const WhatIDo: FC = () => {
   });
 
   return (
-    // Applied consistent spacing: py-16 (mobile) to py-20 (desktop)
     <section className="w-full bg-black py-16 sm:py-20 px-6 sm:px-10 lg:px-16 flex justify-center">
       <motion.div
         ref={whatIDoRef}

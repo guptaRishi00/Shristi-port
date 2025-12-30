@@ -102,7 +102,7 @@ const ExperienceSection: React.FC = () => {
                     fill
                     src={exp.imageSrc}
                     alt={`${exp.company} project`}
-                    className="object-cover"
+                    className=""
                   />
                   <div className="absolute inset-0 bg-black/10"></div>
                 </div>
