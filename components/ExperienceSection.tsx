@@ -35,7 +35,7 @@ const experiences: ExperienceItem[] = [
     duration: "May 2023 - July 2023",
     description:
       "Led a website redesign that increased engagement by 30%, driven by user insights from stakeholder interviews and surveys. Built a scalable design system to ensure consistency across platforms.",
-    imageSrc: "/tree.png",
+    imageSrc: "/tree2.png",
     hasLink: false,
   },
 ];
