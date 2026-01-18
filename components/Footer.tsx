@@ -5,6 +5,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="contact"
       // Added py-16 to ensure top/bottom spacing on mobile
       className="relative w-full px-6 py-16 sm:px-12 lg:p-20 bg-center bg-cover"
       style={{

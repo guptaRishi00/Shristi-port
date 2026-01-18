@@ -3,6 +3,7 @@ import React from "react";
 import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 export default function Hero() {
   const [heroRef, heroInView] = useInView({
@@ -103,14 +104,14 @@ export default function Hero() {
           </motion.p>
 
           {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+          <Link
+            href={
+              "https://drive.google.com/file/d/1B6uIL_r8pMvxZyL53F80j77yCFE5CJQi/view?usp=drivesdk"
+            }
             className="mt-4 px-8 py-3 w-full sm:w-auto bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors duration-300 text-sm sm:text-base"
           >
             Resume
-          </motion.button>
+          </Link>
         </div>
       </motion.div>
     </div>

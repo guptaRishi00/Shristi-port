@@ -11,6 +11,7 @@ interface ExperienceItem {
   description: string;
   imageSrc: string;
   hasLink?: boolean;
+  link?: string;
 }
 
 const experiences: ExperienceItem[] = [
@@ -24,6 +25,7 @@ const experiences: ExperienceItem[] = [
       "Designed mission-critical control interfaces for UAV operations, with a focus on real-time data visualization and reduced cognitive load for defense personnel.",
     imageSrc: "/wall.png",
     hasLink: true,
+    link: "Projects/Newspace",
   },
   {
     id: 2,
@@ -89,7 +91,7 @@ const ExperienceSection: React.FC = () => {
 
                   {exp.hasLink && (
                     <a
-                      href="#"
+                      href={exp?.link}
                       className="text-white underline underline-offset-4 hover:text-gray-300 transition-colors text-sm font-semibold"
                     >
                       See more
