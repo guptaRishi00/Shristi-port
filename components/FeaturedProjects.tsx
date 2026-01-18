@@ -31,7 +31,7 @@ export default function FeaturedProjects() {
       title: "BettinGator",
       description:
         "A clean, operable UI for esport and AI-hosted fights using card layouts, fluid indicators, and clear visual hierarchy to enhance readability and user engagement.",
-      link: "#",
+      link: "https://www.behance.net/gallery/228485313/UIUX-Case-Study-Bettingator",
     },
     {
       image: "/frame2.png",
