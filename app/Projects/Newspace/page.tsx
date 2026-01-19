@@ -69,12 +69,7 @@ export default function NewspacePortfolio() {
         )}
 
         <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-24 sm:pt-32 flex flex-col">
-          <Link href="/#projects" scroll={true}>
-            <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6">
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back To Projects</span>
-            </button>
-          </Link>
+
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             Newspace Research & Technologies
