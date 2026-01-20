@@ -47,13 +47,13 @@ export default function FeaturedProjects() {
         "Simplified complex financial services into an intuitive, credibility-focused experience. Used data visualization techniques for CA to improve user understanding and trust.",
       link: "https://www.bloomvest.io/",
     },
-    {
-      image: "/Frame4.png",
-      title: "Newspace Research & Technologies",
-      description:
-        "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
-      link: "/Projects/Newspace",
-    },
+    // {
+    //   image: "/Frame4.png",
+    //   title: "Newspace Research & Technologies",
+    //   description:
+    //     "Designed mission-critical control interfaces for UAV operations with a focus on real-time data accuracy and system reliability to enhance performance.",
+    //   link: "/Projects/Newspace",
+    // },
   ];
 
   return (

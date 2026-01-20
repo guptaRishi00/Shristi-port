@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { lenisInstance } from "../app/LenisProvider";
-import { Menu, X, ArrowLeft } from "lucide-react";
+import { Menu, X, ArrowLeft, MoveLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -47,17 +47,17 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-screen z-50 transition-all duration-300 ${scrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 w-screen z-50 transition-all duration-300 ${
+        scrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}
     >
       <div className="mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-10 flex justify-between items-center w-full">
         {/* Left Spacer / Back Button */}
         <div className="hidden md:flex w-1/3 items-center">
           {isProjectPage && (
-            <Link href="/#projects" scroll={true}>
-              <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-                <ArrowLeft className="w-8 h-8" />
-
+            <Link href="/#projects" scroll={true} className="ml-26">
+              <button className="flex items-center gap-2  text-gray-400 hover:text-white transition-colors">
+                <MoveLeft className="w-8 h-8" />
               </button>
             </Link>
           )}
@@ -94,11 +94,17 @@ const Navbar: React.FC = () => {
         {/* Mobile Hamburger Button */}
         <div className="md:hidden flex w-full justify-between items-center">
           {isProjectPage ? (
-            <Link href="/#projects" scroll={true} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+            <Link
+              href="/#projects"
+              scroll={true}
+              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            >
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium text-sm">Back</span>
             </Link>
-          ) : <div></div>}
+          ) : (
+            <div></div>
+          )}
 
           <button
             onClick={() => setIsOpen(true)}
